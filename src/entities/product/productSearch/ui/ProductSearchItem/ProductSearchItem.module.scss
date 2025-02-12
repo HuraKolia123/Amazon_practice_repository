@@ -1,0 +1,42 @@
+.ProductSearchItem {
+  background-color: rgb(188, 177, 177);
+  width: 100%;
+  max-width: 1200px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  border-radius: 2px;
+
+  gap: 20px;
+}
+
+.leftSide {
+  display: flex;
+  justify-content: center;
+  padding-left: 10px;
+}
+
+.rightSide {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.productTitle {
+  font-weight: 600;
+  color: rgb(17, 57, 57);
+  cursor: pointer;
+
+  &:hover {
+    color: green;
+  }
+}
+
+.productPrice {
+  color: blue;
+
+  &:hover {
+    color: red;
+  }
+}

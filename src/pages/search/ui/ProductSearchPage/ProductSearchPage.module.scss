@@ -1,0 +1,18 @@
+.ProductSearchPage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+}
+
+.query {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

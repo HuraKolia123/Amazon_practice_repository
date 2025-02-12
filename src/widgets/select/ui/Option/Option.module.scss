@@ -1,0 +1,12 @@
+.Option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 12px;
+  height: 35px;
+  cursor: pointer;
+  &:hover {
+    background-color: #eff1f1;
+  }
+}

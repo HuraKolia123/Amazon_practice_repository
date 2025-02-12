@@ -1,0 +1,24 @@
+.topDrawerSide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 50px;
+  background-color: #232f3f;
+}
+.photo {
+  cursor: pointer;
+}
+.text {
+  cursor: pointer;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 25px;
+  color: white;
+}
+
+.error {
+  font-size: 24px;
+  color: black;
+}

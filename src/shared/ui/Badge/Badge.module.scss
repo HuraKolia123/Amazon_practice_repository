@@ -1,0 +1,1216 @@
+.Badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #3f3f46;
+  border: 1px solid #e4e4e7;
+  border-radius: 4px;
+}
+
+.heightBadgeSmall {
+  height: 20px;
+  padding: 0px 6px;
+  font-size: 12px;
+  display: flex;
+  font-weight: 500;
+  gap: 4px;
+  line-height: 20px;
+
+  img {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.heightBadgeMedium {
+  height: 24px;
+  padding: 0px 8px;
+  display: flex;
+  font-size: 13px;
+  gap: 4px;
+  font-weight: 500;
+  line-height: 20px;
+
+  img {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.heightBadgeLarge {
+  height: 32px;
+  font-size: 14px;
+  padding: 0px 12px;
+  display: flex;
+  gap: 6px;
+  line-height: 24px;
+  font-weight: 500;
+
+  img {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.subtleInformative {
+  background-color: #eff8ff;
+  color: #175cd3;
+  border-color: #b2ddff;
+}
+
+.subtleDanger {
+  background-color: #fef3f2;
+  color: #b42318;
+  border-color: #fecdca;
+}
+
+.subtleWarning {
+  background-color: #fffaeb;
+  color: #b54708;
+  border-color: #fedf89;
+}
+
+.subtleSuccess {
+  background-color: #ecfdf3;
+  color: #067647;
+  border-color: #abefc6;
+}
+
+.subtleNeutral {
+  background-color: #f8f9fc;
+  color: #363f72;
+  border-color: #d5d9eb;
+}
+
+.outlineInformative {
+  color: #175cd3;
+  background-color: #fff;
+  border-width: 1.5px;
+  border-color: #1570ef;
+}
+
+.outlineDanger {
+  color: #b42318;
+  border-color: #d92d20;
+  border-width: 1.5px;
+  background-color: #fff;
+}
+
+.outlineWarning {
+  color: #b54708;
+  border-color: #dc6803;
+  border-width: 1.5px;
+  background-color: #fff;
+}
+
+.outlineSuccess {
+  color: #067647;
+  border-color: #079455;
+  border-width: 1.5px;
+  background-color: #fff;
+}
+
+.outlineNeutral {
+  color: #363f72;
+  border-color: #3e4784;
+  border-width: 1.5px;
+  background-color: #fff;
+}
+
+.solidInformative {
+  color: #eff8ff;
+  background-color: #2e90fa;
+  border-width: 0px;
+}
+
+.solidDanger {
+  background-color: #f04438;
+  color: #fef3f2;
+  border-width: 0px;
+}
+
+.solidWarning {
+  color: #fffaeb;
+  background-color: #f79009;
+  border-width: 0px;
+}
+
+.solidSuccess {
+  color: #ecfdf3;
+  background-color: #17b26a;
+  border-width: 0px;
+}
+
+.solidNeutral {
+  color: #f8f9fc;
+  background-color: #4e5ba6;
+  border-width: 0px;
+}
+
+.softInformative {
+  color: #175cd3;
+  background-color: #eff8ff;
+  border-color: transparent;
+}
+
+.softDanger {
+  color: #b42318;
+  background-color: #fef3f2;
+  border-color: transparent;
+}
+
+.softWarning {
+  color: #b54708;
+  background-color: #fffaeb;
+  border-color: transparent;
+}
+
+.softSuccess {
+  color: #067647;
+  background-color: #ecfdf3;
+  border-color: transparent;
+}
+
+.softNeutral {
+  color: #363f72;
+  background-color: #f8f9fc;
+  border-color: transparent;
+}
+
+.dotSubtleInformative {
+  svg {
+    circle {
+      fill: #2e90fa;
+    }
+  }
+}
+
+.dotSubtleDanger {
+  svg {
+    circle {
+      fill: #f04438;
+    }
+  }
+}
+
+.dotSubtleWarning {
+  svg {
+    circle {
+      fill: #f79009;
+    }
+  }
+}
+
+.dotSubtleSuccess {
+  svg {
+    circle {
+      fill: #17b26a;
+    }
+  }
+}
+
+.dotSubtleNeutral {
+  svg {
+    circle {
+      fill: #4e5ba6;
+    }
+  }
+}
+
+.dotOutlineInformative {
+  svg {
+    circle {
+      fill: #1570ef;
+    }
+  }
+}
+
+.dotOutlineDanger {
+  svg {
+    circle {
+      fill: #d92d20;
+    }
+  }
+}
+
+.dotOutlineWarning {
+  svg {
+    circle {
+      fill: #dc6803;
+    }
+  }
+}
+
+.dotOutlineSuccess {
+  svg {
+    circle {
+      fill: #079455;
+    }
+  }
+}
+
+.dotOutlineNeutral {
+  svg {
+    circle {
+      fill: #4e5ba6;
+    }
+  }
+}
+
+.dotSolidInformative {
+  svg {
+    circle {
+      fill: #eff8ff;
+    }
+  }
+}
+
+.dotSolidDanger {
+  svg {
+    circle {
+      fill: #fef3f2;
+    }
+  }
+}
+
+.dotSolidWarning {
+  svg {
+    circle {
+      fill: #fffaeb;
+    }
+  }
+}
+
+.dotSolidSuccess {
+  svg {
+    circle {
+      fill: #ecfdf3;
+    }
+  }
+}
+
+.dotSolidNeutral {
+  svg {
+    circle {
+      fill: #f8f9fc;
+    }
+  }
+}
+
+.dotSoftInformative {
+  svg {
+    circle {
+      fill: #2e90fa;
+    }
+  }
+}
+
+.dotSoftDanger {
+  svg {
+    circle {
+      fill: #f04438;
+    }
+  }
+}
+
+.dotSoftWarning {
+  svg {
+    circle {
+      fill: #f79009;
+    }
+  }
+}
+
+.dotSoftSuccess {
+  svg {
+    circle {
+      fill: #17b26a;
+    }
+  }
+}
+
+.dotSoftNeutral {
+  svg {
+    circle {
+      fill: #4e5ba6;
+    }
+  }
+}
+
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeBtnSubtleInformative {
+  svg {
+    path {
+      stroke: #53b1fd;
+    }
+  }
+}
+
+.closeBtnSubtleDanger {
+  svg {
+    path {
+      stroke: #f97066;
+    }
+  }
+}
+
+.closeBtnSubtleWarning {
+  svg {
+    path {
+      stroke: #fdb022;
+    }
+  }
+}
+
+.closeBtnSubtleSuccess {
+  svg {
+    path {
+      stroke: #47cd89;
+    }
+  }
+}
+
+.closeBtnSubtleNeutral {
+  svg {
+    path {
+      stroke: #717bbc;
+    }
+  }
+}
+
+.closeBtnOutlineInformative {
+  svg {
+    path {
+      stroke: #53b1fd;
+    }
+  }
+}
+
+.closeBtnOutlineDanger {
+  svg {
+    path {
+      stroke: #f97066;
+    }
+  }
+}
+
+.closeBtnOutlineWarning {
+  svg {
+    path {
+      stroke: #fdb022;
+    }
+  }
+}
+
+.closeBtnOutlineSuccess {
+  svg {
+    path {
+      stroke: #47cd89;
+    }
+  }
+}
+
+.closeBtnOutlineNeutral {
+  svg {
+    path {
+      stroke: #717bbc;
+    }
+  }
+}
+
+.closeBtnSolidInformative {
+  svg {
+    path {
+      stroke: #84caff;
+    }
+  }
+}
+
+.closeBtnSolidDanger {
+  svg {
+    path {
+      stroke: #fef3f2;
+    }
+  }
+}
+
+.closeBtnSolidWarning {
+  svg {
+    path {
+      stroke: #fffaeb;
+    }
+  }
+}
+
+.closeBtnSolidSuccess {
+  svg {
+    path {
+      stroke: #ecfdf3;
+    }
+  }
+}
+
+.closeBtnSolidNeutral {
+  svg {
+    path {
+      stroke: #f8f9fc;
+    }
+  }
+}
+
+.closeBtnSoftInformative {
+  svg {
+    path {
+      stroke: #53b1fd;
+    }
+  }
+}
+
+.closeBtnSoftDanger {
+  svg {
+    path {
+      stroke: #f97066;
+    }
+  }
+}
+
+.closeBtnSoftWarning {
+  svg {
+    path {
+      stroke: #fdb022;
+    }
+  }
+}
+
+.closeBtnSoftSuccess {
+  svg {
+    path {
+      stroke: #47cd89;
+    }
+  }
+}
+
+.closeBtnSoftNeutral {
+  svg {
+    path {
+      stroke: #717bbc;
+    }
+  }
+}
+
+.iconTrailing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconTrlSubtleInformative {
+  svg {
+    path {
+      stroke: #2e90fa;
+    }
+  }
+}
+
+.iconTrlSubtleDanger {
+  svg {
+    path {
+      stroke: #f04438;
+    }
+  }
+}
+
+.iconTrlSubtleWarning {
+  svg {
+    path {
+      stroke: #f79009;
+    }
+  }
+}
+
+.iconTrlSubtleSuccess {
+  svg {
+    path {
+      stroke: #17b26a;
+    }
+  }
+}
+
+.iconTrlSubtleNeutral {
+  svg {
+    path {
+      stroke: #4e5ba6;
+    }
+  }
+}
+
+.iconTrlOutlineInformative {
+  svg {
+    path {
+      stroke: #1570ef;
+    }
+  }
+}
+
+.iconTrlOutlineDanger {
+  svg {
+    path {
+      stroke: #d92d20;
+    }
+  }
+}
+
+.iconTrlOutlineWarning {
+  svg {
+    path {
+      stroke: #dc6803;
+    }
+  }
+}
+
+.iconTrlOutlineSuccess {
+  svg {
+    path {
+      stroke: #079455;
+    }
+  }
+}
+
+.iconTrlOutlineNeutral {
+  svg {
+    path {
+      stroke: #4e5ba6;
+    }
+  }
+}
+
+.iconTrlSolidInformative {
+  svg {
+    path {
+      stroke: #eff8ff;
+    }
+  }
+}
+
+.iconTrlSolidDanger {
+  svg {
+    path {
+      stroke: #fef3f2;
+    }
+  }
+}
+
+.iconTrlSolidWarning {
+  svg {
+    path {
+      stroke: #fffaeb;
+    }
+  }
+}
+
+.iconTrlSolidSuccess {
+  svg {
+    path {
+      stroke: #ecfdf3;
+    }
+  }
+}
+
+.iconTrlSolidNeutral {
+  svg {
+    path {
+      stroke: #f8f9fc;
+    }
+  }
+}
+
+.iconTrlSoftInformative {
+  svg {
+    path {
+      stroke: #2e90fa;
+    }
+  }
+}
+
+.iconTrlSoftDanger {
+  svg {
+    path {
+      stroke: #f04438;
+    }
+  }
+}
+
+.iconTrlSoftWarning {
+  svg {
+    path {
+      stroke: #f79009;
+    }
+  }
+}
+
+.iconTrlSoftSuccess {
+  svg {
+    path {
+      stroke: #17b26a;
+    }
+  }
+}
+
+.iconTrlSoftNeutral {
+  svg {
+    path {
+      stroke: #4e5ba6;
+    }
+  }
+}
+
+.iconLeading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconLeadingSubtleInformative {
+  svg {
+    path {
+      stroke: #2e90fa;
+    }
+  }
+}
+
+.iconLeadingSubtleDanger {
+  svg {
+    path {
+      stroke: #f04438;
+    }
+  }
+}
+
+.iconLeadingSubtleWarning {
+  svg {
+    path {
+      stroke: #f79009;
+    }
+  }
+}
+
+.iconLeadingSubtleSuccess {
+  svg {
+    path {
+      stroke: #17b26a;
+    }
+  }
+}
+
+.iconLeadingSubtleNeutral {
+  svg {
+    path {
+      stroke: #4e5ba6;
+    }
+  }
+}
+
+.iconLeadingOutlineInformative {
+  svg {
+    path {
+      stroke: #1570ef;
+    }
+  }
+}
+
+.iconLeadingOutlineDanger {
+  svg {
+    path {
+      stroke: #d92d20;
+    }
+  }
+}
+
+.iconLeadingOutlineWarning {
+  svg {
+    path {
+      stroke: #dc6803;
+    }
+  }
+}
+
+.iconLeadingOutlineSuccess {
+  svg {
+    path {
+      stroke: #079455;
+    }
+  }
+}
+
+.iconLeadingOutlineNeutral {
+  svg {
+    path {
+      stroke: #4e5ba6;
+    }
+  }
+}
+
+.iconLeadingSolidInformative {
+  svg {
+    path {
+      stroke: #eff8ff;
+    }
+  }
+}
+
+.iconLeadingSolidDanger {
+  svg {
+    path {
+      stroke: #fef3f2;
+    }
+  }
+}
+.iconLeadingSolidWarning {
+  svg {
+    path {
+      stroke: #fffaeb;
+    }
+  }
+}
+
+.iconLeadingSolidSuccess {
+  svg {
+    path {
+      stroke: #ecfdf3;
+    }
+  }
+}
+
+.iconLeadingSolidNeutral {
+  svg {
+    path {
+      stroke: #f8f9fc;
+    }
+  }
+}
+
+.iconLeadingSoftInformative {
+  svg {
+    path {
+      stroke: #2e90fa;
+    }
+  }
+}
+
+.iconLeadingSoftDanger {
+  svg {
+    path {
+      stroke: #f04438;
+    }
+  }
+}
+
+.iconLeadingSoftWarning {
+  svg {
+    path {
+      stroke: #f79009;
+    }
+  }
+}
+
+.iconLeadingSoftSuccess {
+  svg {
+    path {
+      stroke: #17b26a;
+    }
+  }
+}
+
+.iconLeadingSoftNeutral {
+  svg {
+    path {
+      stroke: #4e5ba6;
+    }
+  }
+}
+
+.iconLoading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconLoadingSubtleInformative {
+  svg {
+    circle:nth-child(1) {
+      fill: #1570ef;
+    }
+    circle:nth-child(2) {
+      fill: #53b1fd;
+    }
+  }
+}
+
+.iconLoadingSubtleDanger {
+  svg {
+    circle:nth-child(1) {
+      fill: #d92d20;
+    }
+    circle:nth-child(2) {
+      fill: #f97066;
+    }
+  }
+}
+
+.iconLoadingSubtleWarning {
+  svg {
+    circle:nth-child(1) {
+      fill: #dc6803;
+    }
+    circle:nth-child(2) {
+      fill: #fdb022;
+    }
+  }
+}
+
+.iconLoadingSubtleSuccess {
+  svg {
+    circle:nth-child(1) {
+      fill: #079455;
+    }
+    circle:nth-child(2) {
+      fill: #47cd89;
+    }
+  }
+}
+
+.iconLoadingSubtleNeutral {
+  svg {
+    circle:nth-child(1) {
+      fill: #3e4784;
+    }
+    circle:nth-child(2) {
+      fill: #717bbc;
+    }
+  }
+}
+
+.iconLoadingOutlineInformative {
+  svg {
+    circle:nth-child(1) {
+      fill: #1570ef;
+    }
+    circle:nth-child(2) {
+      fill: #53b1fd;
+    }
+  }
+}
+
+.iconLoadingOutlineDanger {
+  svg {
+    circle:nth-child(1) {
+      fill: #d92d20;
+    }
+    circle:nth-child(2) {
+      fill: #f97066;
+    }
+  }
+}
+
+.iconLoadingOutlineWarning {
+  svg {
+    circle:nth-child(1) {
+      fill: #dc6803;
+    }
+    circle:nth-child(2) {
+      fill: #fdb022;
+    }
+  }
+}
+
+.iconLoadingOutlineSuccess {
+  svg {
+    circle:nth-child(1) {
+      fill: #079455;
+    }
+    circle:nth-child(2) {
+      fill: #47cd89;
+    }
+  }
+}
+
+.iconLoadingOutlineNeutral {
+  svg {
+    circle:nth-child(1) {
+      fill: #3e4784;
+    }
+    circle:nth-child(2) {
+      fill: #717bbc;
+    }
+  }
+}
+
+.iconLoadingSolidInformative {
+  svg {
+    circle:nth-child(1) {
+      fill: #ffffff99;
+    }
+    circle:nth-child(2) {
+      fill: #ffffff4d;
+    }
+  }
+}
+
+.iconLoadingSolidDanger {
+  svg {
+    circle:nth-child(1) {
+      fill: #ffffff99;
+    }
+    circle:nth-child(2) {
+      fill: #ffffff4d;
+    }
+  }
+}
+
+.iconLoadingSolidWarning {
+  svg {
+    circle:nth-child(1) {
+      fill: #ffffff99;
+    }
+    circle:nth-child(2) {
+      fill: #ffffff4d;
+    }
+  }
+}
+
+.iconLoadingSolidSuccess {
+  svg {
+    circle:nth-child(1) {
+      fill: #ffffff99;
+    }
+    circle:nth-child(2) {
+      fill: #ffffff4d;
+    }
+  }
+}
+
+.iconLoadingSolidNeutral {
+  svg {
+    circle:nth-child(1) {
+      fill: #ffffff99;
+    }
+    circle:nth-child(2) {
+      fill: #ffffff4d;
+    }
+  }
+}
+
+.iconLoadingSoftInformative {
+  svg {
+    circle:nth-child(1) {
+      fill: #1570ef;
+    }
+    circle:nth-child(2) {
+      fill: #53b1fd;
+    }
+  }
+}
+
+.iconLoadingSoftDanger {
+  svg {
+    circle:nth-child(1) {
+      fill: #d92d20;
+    }
+    circle:nth-child(2) {
+      fill: #f97066;
+    }
+  }
+}
+
+.iconLoadingSoftWarning {
+  svg {
+    circle:nth-child(1) {
+      fill: #dc6803;
+    }
+    circle:nth-child(2) {
+      fill: #fdb022;
+    }
+  }
+}
+
+.iconLoadingSoftSuccess {
+  svg {
+    circle:nth-child(1) {
+      fill: #079455;
+    }
+    circle:nth-child(2) {
+      fill: #47cd89;
+    }
+  }
+}
+
+.iconLoadingSoftNeutral {
+  svg {
+    circle:nth-child(1) {
+      fill: #3e4784;
+    }
+    circle:nth-child(2) {
+      fill: #717bbc;
+    }
+  }
+}
+
+.countryFlag {
+  border-radius: 50%;
+}
+
+// .OutlookLogo {
+//   svg {
+//     rect {
+//       fill: #aeaeae !important;
+//     }
+
+//     path:nth-child(2),
+//     path:nth-child(3),
+//     path:nth-child(4),
+//     path:nth-child(5),
+//     path:nth-child(6),
+//     path:nth-child(7),
+//     path:nth-child(8),
+//     path:nth-child(9),
+//     path:nth-child(10) {
+//       fill: white !important;
+//     }
+
+//     path:nth-child(16) {
+//       fill: #f1f1f1 !important;
+//     }
+
+//     path:nth-child(13) {
+//       fill: #f1f1f1 !important;
+//     }
+
+//     path:nth-child(21) {
+//       fill: white !important;
+//     }
+
+//     path:nth-child(22) {
+//       fill: #aeaeae !important;
+//     }
+
+//     path:nth-child(23) {
+//       fill: white !important;
+//     }
+//   }
+
+//   &:hover {
+//     svg {
+//       rect {
+//         fill: white !important;
+//       }
+
+//       path:nth-child(2) {
+//         fill: #8652f6 !important;
+//       }
+//       path:nth-child(3) {
+//         fill: #0a2767 !important;
+//       }
+//       path:nth-child(4) {
+//         fill: #0364b8 !important;
+//       }
+//       path:nth-child(5) {
+//         fill: #0078d4 !important;
+//       }
+//       path:nth-child(6) {
+//         fill: #28a8ea !important;
+//       }
+//       path:nth-child(7) {
+//         fill: #0364b8 !important;
+//       }
+//       path:nth-child(8) {
+//         fill: #14447d !important;
+//       }
+//       path:nth-child(9) {
+//         fill: #0078d4 !important;
+//       }
+//       path:nth-child(10) {
+//         fill: #28a8ea !important;
+//       }
+//       path:nth-child(13) {
+//         fill: rgb(20, 144, 223) !important;
+//       }
+
+//       path:nth-child(16) {
+//         fill: #28a8ea !important;
+//       }
+
+//       path:nth-child(21) {
+//         fill: url(#Microsoft-Outlook-404x364_svg__b) !important;
+//       }
+
+//       path:nth-child(22) {
+//         fill: white !important;
+//       }
+
+//       path:nth-child(23) {
+//         fill: #50d9ff !important;
+//       }
+//     }
+//   }
+
+//   &:active {
+//     svg {
+//       rect {
+//         fill: white !important;
+//       }
+
+//       path:nth-child(2) {
+//         fill: #8652f6 !important;
+//       }
+//       path:nth-child(3) {
+//         fill: #0a2767 !important;
+//       }
+//       path:nth-child(4) {
+//         fill: #0364b8 !important;
+//       }
+//       path:nth-child(5) {
+//         fill: #0078d4 !important;
+//       }
+//       path:nth-child(6) {
+//         fill: #28a8ea !important;
+//       }
+//       path:nth-child(7) {
+//         fill: #0364b8 !important;
+//       }
+//       path:nth-child(8) {
+//         fill: #14447d !important;
+//       }
+//       path:nth-child(9) {
+//         fill: #0078d4 !important;
+//       }
+//       path:nth-child(10) {
+//         fill: #28a8ea !important;
+//       }
+//       path:nth-child(13) {
+//         fill: rgb(20, 144, 223) !important;
+//       }
+
+//       path:nth-child(16) {
+//         fill: #28a8ea !important;
+//       }
+
+//       path:nth-child(21) {
+//         fill: url(#Microsoft-Outlook-404x364_svg__b) !important;
+//       }
+
+//       path:nth-child(22) {
+//         fill: white !important;
+//       }
+
+//       path:nth-child(23) {
+//         fill: #50d9ff !important;
+//       }
+//     }
+//   }
+// }

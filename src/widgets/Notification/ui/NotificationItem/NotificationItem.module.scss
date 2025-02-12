@@ -1,0 +1,92 @@
+.Notification {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+
+  border: 1px solid #d1d1d6;
+  border-radius: 12px;
+  padding: 16px;
+  font-family: Inter;
+}
+
+.notificationSmaller {
+  display: flex;
+  width: 400px;
+  gap: 5px;
+  height: 144px;
+}
+
+.notificationBigger {
+  display: grid;
+  grid-template-areas:
+    "icon1 icon2"
+    "content content";
+  grid-template-rows: auto;
+  width: 375px;
+  min-height: 180px;
+
+  .content {
+    grid-area: content;
+  }
+
+  .wrapperNotificationIcon {
+    grid-area: icon1;
+  }
+
+  .cancelIcon {
+    grid-area: icon2;
+    margin-left: auto;
+  }
+}
+
+.topIcons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.uploadAndUpdateIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d1d1d6;
+  border-radius: 12px;
+  width: 40px;
+  height: 40px;
+}
+
+.btns {
+  display: flex;
+  gap: 12px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mainText {
+  gap: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #1a1a1e;
+}
+
+.text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #3f3f46;
+}
+
+.cancelIcon {
+  cursor: pointer;
+}

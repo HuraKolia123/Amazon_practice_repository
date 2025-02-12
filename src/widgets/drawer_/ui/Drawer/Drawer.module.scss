@@ -1,0 +1,44 @@
+.Drawer {
+  width: 365px;
+  height: 100vh;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-x: hidden;
+  transition: left 0.5s ease-in-out;
+}
+
+.drawerButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  top: 10px;
+  left: 370px;
+  cursor: pointer;
+  background-color: transparent;
+  z-index: 100;
+  border: 2px solid transparent;
+  border-radius: 4px;
+
+  &:active {
+    border-color: white;
+  }
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}

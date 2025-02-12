@@ -1,0 +1,1 @@
+export { ProductCategoryItem } from "./ProductCategoryItem";

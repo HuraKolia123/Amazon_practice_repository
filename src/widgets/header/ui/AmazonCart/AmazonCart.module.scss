@@ -1,0 +1,13 @@
+.AmazonCart {
+  border: 1px solid transparent;
+  border-radius: 2px;
+
+  img {
+    width: 90px;
+    height: 50px;
+  }
+
+  &:hover {
+    border-color: white;
+  }
+}

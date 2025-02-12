@@ -1,0 +1,501 @@
+.SocialButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.coloredGoogle {
+  background-color: #ffffff;
+  color: #3f3f46;
+  border: 1px solid #d1d1d6;
+  box-shadow: 0px 1px 2px 0px #1018280d;
+
+  &:hover {
+    background-color: #fafafa;
+    color: #26272b;
+    box-shadow: 0px 1px 2px 0px #1018280d;
+  }
+
+  &:focus {
+    background-color: #ffffff;
+    color: #3f3f46;
+    box-shadow: 0px 0px 0px 4px #98a2b324;
+  }
+}
+
+.whiteGoogle {
+  background-color: #ffffff;
+  color: #3f3f46;
+  border: 1px solid #d1d1d6;
+  box-shadow: 0px 1px 2px 0px #1018280d;
+
+  &:hover {
+    background-color: #fafafa;
+    color: #26272b;
+    box-shadow: 0px 1px 2px 0px #1018280d;
+  }
+
+  &:focus {
+    background-color: #ffffff;
+    color: #3f3f46;
+
+    box-shadow: 0px 0px 0px 4px #98a2b324;
+  }
+}
+
+.blackWhiteGoogle {
+  background-color: #ffffff;
+  color: #3f3f46;
+  border: 1px solid #d1d1d6;
+  box-shadow: 0px 1px 2px 0px #1018280d;
+
+  &:hover {
+    background-color: #fafafa;
+    color: #26272b;
+    box-shadow: 0px 1px 2px 0px #1018280d;
+  }
+
+  &:focus {
+    background-color: #ffffff;
+    color: #3f3f46;
+    box-shadow: 0px 0px 0px 4px #98a2b324;
+  }
+}
+
+.googleIconBlackWhite {
+  svg {
+    g {
+      path {
+        fill: #a0a0ab;
+      }
+    }
+  }
+
+  &:hover {
+    svg {
+      g {
+        path {
+          fill: #70707b;
+        }
+      }
+    }
+  }
+
+  &:focus {
+    svg {
+      g {
+        path {
+          fill: #a0a0ab;
+        }
+      }
+    }
+  }
+}
+
+.facebookIconWhite {
+  svg {
+    g {
+      path:nth-child(1) {
+        fill: #1877f2;
+      }
+      path:nth-child(2) {
+        fill: white;
+      }
+    }
+  }
+}
+
+.facebookIconBlackWhite {
+  svg {
+    g {
+      path {
+        fill: #a0a0ab;
+      }
+    }
+  }
+}
+
+.coloredFacebook {
+  background-color: #1877f2;
+  color: #ffffff;
+  box-shadow: 0px 1px 2px 0px #1018280d;
+
+  &:hover {
+    background-color: #0c63d4;
+    box-shadow: 0px 1px 2px 0px #1018280d;
+  }
+
+  &:focus {
+    background-color: #1877f2;
+    box-shadow: 0px 0px 0px 4px #98a2b324;
+  }
+}
+
+.whiteFacebook {
+  background-color: #fff;
+  color: #3f3f46;
+  border: 1px solid #d1d1d6;
+  box-shadow: 0px 1px 2px 0px #1018280d;
+
+  &:hover {
+    background-color: #fafafa;
+    color: #26272b;
+    box-shadow: 0px 1px 2px 0px #1018280d;
+  }
+
+  &:focus {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 0px 4px #98a2b324;
+  }
+}
+
+.blackWhiteFacebook {
+  background-color: #ffffff;
+  color: #3f3f46;
+  border: 1px solid #d1d1d6;
+  box-shadow: 0px 1px 2px 0px #1018280d;
+
+  &:hover {
+    background-color: #fafafa;
+    color: #26272b;
+    box-shadow: 0px 1px 2px 0px #1018280d;
+
+    svg {
+      g {
+        path:nth-child(1) {
+          fill: #70707a;
+        }
+        path:nth-child(2) {
+          fill: #fafafa;
+        }
+      }
+    }
+  }
+
+  &:focus {
+    background-color: #fff;
+    box-shadow: 0px 0px 0px 4px #98a2b324;
+    color: #3f3f46;
+
+    svg {
+      g {
+        path {
+          fill: #a0a0ab;
+        }
+      }
+    }
+  }
+}
+
+.coloredApple {
+  background-color: #000000;
+  color: #ffffff;
+  box-shadow: 0px 1px 2px 0px #1018280d;
+
+  &:hover {
+    box-shadow: 0px 1px 2px 0px #1018280d;
+  }
+
+  &:focus {
+    box-shadow: 0px 0px 0px 4px #98a2b324;
+  }
+}
+
+.whiteApple {
+  background-color: #ffffff;
+  border: 1px solid #d1d1d6;
+  color: #3f3f46;
+  box-shadow: 0px 1px 2px 0px #1018280d;
+
+  svg {
+    path {
+      fill: black;
+    }
+  }
+
+  &:hover {
+    background-color: #fafafa;
+    color: #26272b;
+    box-shadow: 0px 1px 2px 0px #1018280d;
+  }
+
+  &:focus {
+    background-color: #ffffff;
+    color: #3f3f46;
+    box-shadow: 0px 0px 0px 4px #98a2b324;
+  }
+}
+
+.blackWhiteApple {
+  background-color: #ffffff;
+  color: #3f3f46;
+  border: 1px solid #d1d1d6;
+  box-shadow: 0px 1px 2px 0px #1018280d;
+
+  svg {
+    path {
+      fill: #a0a0ab;
+    }
+  }
+
+  &:hover {
+    background-color: #fafafa;
+    color: #26272b;
+    box-shadow: 0px 1px 2px 0px #1018280d;
+
+    svg {
+      path {
+        fill: #70707b;
+      }
+    }
+  }
+
+  &:focus {
+    background-color: #ffffff;
+    color: #3f3f46;
+    box-shadow: 0px 0px 0px 4px #98a2b324;
+
+    svg {
+      path {
+        fill: #a0a0ab;
+      }
+    }
+  }
+}
+
+.coloredTwitter {
+  background-color: #000000;
+  color: #ffffff;
+  box-shadow: 0px 1px 2px 0px #1018280d;
+  &:focus {
+    box-shadow: 0px 0px 0px 4px #98a2b324;
+  }
+}
+
+.whiteTwitter {
+  background-color: #ffffff;
+  color: #3f3f46;
+  border: 1px solid #d1d1d6;
+  box-shadow: 0px 1px 2px 0px #1018280d;
+
+  svg {
+    path {
+      fill: #242e36;
+    }
+  }
+
+  &:hover {
+    background-color: #fafafa;
+    color: #26272b;
+    box-shadow: 0px 1px 2px 0px #1018280d;
+  }
+
+  &:focus {
+    background-color: #ffffff;
+    color: #3f3f46;
+    box-shadow: 0px 0px 0px 4px #98a2b324;
+  }
+}
+
+.blackWhiteTwitter {
+  background-color: #fff;
+  color: #3f3f46;
+  border: 1px solid #d1d1d6;
+  box-shadow: 0px 1px 2px 0px #1018280d;
+
+  svg {
+    path {
+      fill: #a0a0ab;
+    }
+  }
+
+  &:hover {
+    background-color: #fafafa;
+    color: #26272b;
+    box-shadow: 0px 1px 2px 0px #1018280d;
+
+    svg {
+      path {
+        fill: #70707b;
+      }
+    }
+  }
+
+  &:focus {
+    background-color: #fff;
+    color: #3f3f46;
+    box-shadow: 0px 0px 0px 4px #98a2b324;
+
+    svg {
+      path {
+        fill: #a0a0ab;
+      }
+    }
+  }
+}
+
+.coloredFigma {
+  background-color: #000000;
+  color: #ffffff;
+  box-shadow: 0px 1px 2px 0px #1018280d;
+
+  &:focus {
+    box-shadow: 0px 0px 0px 4px #98a2b324;
+  }
+}
+
+.whiteFigma {
+  background-color: #ffffff;
+  color: #3f3f46;
+  border: 1px solid #d1d1d6;
+  box-shadow: 0px 1px 2px 0px #1018280d;
+
+  &:hover {
+    background-color: #fafafa;
+    color: #26272b;
+    box-shadow: 0px 1px 2px 0px #1018280d;
+  }
+
+  &:focus {
+    background-color: #fff;
+    color: #3f3f46;
+    box-shadow: 0px 0px 0px 4px #98a2b324;
+  }
+}
+
+.blackWhiteFigma {
+  background-color: #ffffff;
+  color: #3f3f46;
+  border: 1px solid #d1d1d6;
+  box-shadow: 0px 1px 2px 0px #1018280d;
+
+  svg {
+    path {
+      fill: white;
+      stroke: #a0a0ab;
+      stroke-width: 1.5px;
+    }
+  }
+
+  &:hover {
+    background-color: #fafafa;
+    color: #26272b;
+    box-shadow: 0px 1px 2px 0px #1018280d;
+
+    svg {
+      path {
+        stroke: #70707b;
+      }
+    }
+  }
+
+  &:focus {
+    background-color: #ffffff;
+    color: #3f3f46;
+    box-shadow: 0px 0px 0px 4px #98a2b324;
+  }
+}
+
+.coloredDribbble {
+  background-color: #ea4c89;
+  color: #ffffff;
+  box-shadow: 0px 1px 2px 0px #1018280d;
+
+  &:hover {
+    background-color: #e62872;
+    box-shadow: 0px 1px 2px 0px #1018280d;
+  }
+  &:focus {
+    background-color: #ea4c89;
+    box-shadow: 0px 0px 0px 4px #98a2b324;
+  }
+}
+
+.whiteDribbble {
+  background-color: #ffffff;
+  border: 1px solid #d1d1d6;
+  color: #3f3f46;
+  box-shadow: 0px 1px 2px 0px #1018280d;
+
+  svg {
+    background-color: #c32361;
+    border-radius: 50%;
+    path:nth-child(1) {
+      fill: #ea4c89;
+    }
+  }
+
+  &:hover {
+    background-color: #fafafa;
+    box-shadow: 0px 1px 2px 0px #1018280d;
+    color: #26272b;
+  }
+
+  &:focus {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 0px 4px #98a2b324;
+    color: #3f3f46;
+  }
+}
+
+.blackWhiteDribbble {
+  background-color: #ffffff;
+  color: #3f3f46;
+  border: 1px solid #d1d1d6;
+  box-shadow: 0px 1px 2px 0px #1018280d;
+
+  svg {
+    background-color: #ffffff;
+    border-radius: 50%;
+    path:nth-child(1) {
+      fill: #a0a0ab;
+    }
+  }
+
+  &:hover {
+    background-color: #fafafa;
+    color: #26272b;
+    box-shadow: 0px 1px 2px 0px #1018280d;
+
+    svg {
+      background-color: #ffffff;
+      border-radius: 50%;
+      path:nth-child(1) {
+        fill: #70707b;
+      }
+    }
+  }
+
+  &:focus {
+    background-color: #ffffff;
+    color: #3f3f46;
+    box-shadow: 0px 0px 0px 4px #98a2b324;
+
+    svg {
+      background-color: #ffffff;
+      border-radius: 50%;
+      path:nth-child(1) {
+        fill: #a0a0ab;
+      }
+    }
+  }
+}

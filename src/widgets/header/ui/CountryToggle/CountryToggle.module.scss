@@ -1,0 +1,39 @@
+.CountryToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  gap: 5px;
+  padding-left: 9px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  &:hover {
+    border-color: white;
+  }
+}
+
+.initials {
+  font-family: "Amazon Ember", Arial, sans-serif;
+  cursor: pointer;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+}
+
+.flag {
+  display: flex;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  svg {
+    fill: #a7acb2;
+  }
+}
+
+.rightSide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

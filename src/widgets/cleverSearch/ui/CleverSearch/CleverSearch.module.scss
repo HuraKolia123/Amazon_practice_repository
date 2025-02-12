@@ -1,0 +1,32 @@
+// .inputWrapper {
+//   //   padding: 3px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   gap: 5px;
+//   background-color: #fff;
+//   border-radius: 4px;
+//   padding: 10px;
+
+//   svg {
+//     cursor: pointer;
+//   }
+// }
+
+.cleverSearch {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  background: white;
+  max-width: 786px;
+}
+.bottomSide {
+  width: 580px;
+  background-color: #fff;
+  height: 300px;
+  border-radius: 4px;
+  overflow-y: auto;
+  position: absolute;
+  top: 46px;
+}

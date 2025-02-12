@@ -1,0 +1,29 @@
+.MultiSelect {
+  position: relative;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  width: 285px;
+  border: 1px solid #d1d1d6;
+  border-radius: 4px;
+  padding: 3px 5px;
+}
+
+.rightPart {
+  display: flex;
+  align-items: center;
+}
+
+.array {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom {
+  position: absolute;
+  top: 40px;
+}

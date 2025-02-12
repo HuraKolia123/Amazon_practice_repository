@@ -1,0 +1,1 @@
+export { rapidAPI } from "./rapidAPI";

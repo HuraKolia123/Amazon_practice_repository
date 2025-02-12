@@ -1,0 +1,19 @@
+.TagInputItem {
+  max-height: 26px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 8px;
+
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+
+  border: 1px solid #d1d1d6;
+  border-radius: 4px;
+}
+
+.closeIcon {
+  cursor: pointer;
+}

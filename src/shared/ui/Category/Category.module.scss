@@ -1,0 +1,15 @@
+.Category{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid grey;
+  width: 168px;
+  height: 142px; 
+  border-radius: 4px;
+  cursor: pointer;
+}
+.icon{
+  width: 56px;
+  height: 56px;
+}

@@ -1,0 +1,36 @@
+.Select {
+  width: 160px;
+  max-width: 202px;
+  height: 20px;
+  line-height: 20px;
+  border: rgb(213, 217, 217) 0.8px solid;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+  padding: 0px 5px 0px 5px;
+  cursor: pointer;
+  user-select: none;
+  &:hover {
+    background-color: #eff1f1;
+  }
+}
+.defaultValue {
+  font-size: 11px;
+}
+
+.icon {
+  display: flex;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.bottomSide {
+  background-color: #fff;
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  z-index: 10;
+}
