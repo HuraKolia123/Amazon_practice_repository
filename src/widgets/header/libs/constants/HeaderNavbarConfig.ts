@@ -1,5 +1,4 @@
-// TODO change file and name to camelCase
-export const HeaderNavBarConfig = [
+export const headerNavBarConfig = [
   { text: "Today's Deals" },
   { text: "Customer Service" },
   { text: "Registry" },

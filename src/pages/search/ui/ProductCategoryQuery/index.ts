@@ -1,0 +1,1 @@
+export { ProductCategoryQuery } from "./ProductCategoryQuery";

@@ -4,7 +4,6 @@ import { FC } from "react";
 import styles from "./Header.module.scss";
 import { AmazonLabel } from "../AmazonLabel/AmazonLabel";
 import { CountryDeliver } from "../CountryDeliver/CountryDeliver";
-import { HeaderInput } from "../HeaderInput/HeaderInput";
 //assets
 import USA from "../../libs/assets/jpg/USA.jpg";
 import { CountryToggle } from "../CountryToggle/CountryToggle";
@@ -12,6 +11,7 @@ import ChevronDown from "../../libs/assets/svg/chevron_down.svg?react";
 import { InfoComponent } from "../InfoComponent/InfoComponent";
 import { AmazonCart } from "../AmazonCart/AmazonCart";
 import { HeaderNavBar } from "../HeaderNavBar/HeaderNavBar";
+import { CleverSearch } from "@/widgets/cleverSearch";
 
 interface HeaderProps {}
 
@@ -23,7 +23,7 @@ export const Header: FC<HeaderProps> = ({}) => {
           <div className={styles.leftPart}>
             <AmazonLabel />
             <CountryDeliver country="Ukraine" />
-            <HeaderInput />
+            <CleverSearch />
           </div>
           <div className={styles.rightPart}>
             <CountryToggle countryInitials="EN" flag={USA} />

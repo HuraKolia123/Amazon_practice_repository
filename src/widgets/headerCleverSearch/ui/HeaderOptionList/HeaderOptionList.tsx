@@ -3,10 +3,11 @@ import { FC } from "react";
 // styles
 import styles from "./HeaderOptionList.module.scss";
 import { HeaderOption } from "../HeaderOption/HeaderOption";
+import { IProductCategoryItem } from "@/entities/utility/productCategoryList/model/types/productCategoryList";
 
 interface HeaderOptionListProps {
-  optionItems: string[];
-  pickOption: (value: string) => void;
+  optionItems: IProductCategoryItem[];
+  pickOption: (value: IProductCategoryItem) => void;
 }
 
 export const HeaderOptionList: FC<HeaderOptionListProps> = ({
@@ -17,7 +18,11 @@ export const HeaderOptionList: FC<HeaderOptionListProps> = ({
     <div className={styles.HeaderOptionList}>
       {optionItems.map((item) => {
         return (
-          <HeaderOption optionItem={item} pickOption={pickOption} key={item} />
+          <HeaderOption
+            optionItem={item}
+            pickOption={pickOption}
+            key={item.id}
+          />
         );
       })}
     </div>

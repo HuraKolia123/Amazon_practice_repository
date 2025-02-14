@@ -11,22 +11,31 @@ import { useGetCategoryItemsQuery } from "@/entities/utility/productCategoryList
 import { getProductsRoute } from "@/shared/libs/constants/routes";
 import { buildUrlWithSearchParams } from "@/shared/libs/utils/buildUrlWithSearchParams";
 //assets
-// import LeftArrow from "../../assets/svg/leftArrow.svg?react";
-// import SearchIcon from "../../assets/svg/searchIcon.svg?react";
+import SearchIcon from "../../assets/svg/searchIcon.svg?react";
 //ui
 import { CleverSearchContent } from "../CleverSearchContent";
-import { Input } from "@/shared/ui/Input";
+// import { Input } from "@/shared/ui/Input";
 
 // styles
 import styles from "./CleverSearch.module.scss";
 import { useSelector } from "react-redux";
 import { getProductPageState } from "@/pages/search/model/selectors";
 
+import { Input } from "@/shared/ui/Input";
+import { HeaderSelect } from "@/widgets/headerCleverSearch/ui/HeaderSelect/HeaderSelect";
+import { IProductCategoryItem } from "@/entities/utility/productCategoryList/model/types/productCategoryList";
+import { mokCategoriesData } from "@/pages/search/libs/constants/mokCategoriesData";
+import { DropDown } from "@/widgets/dropDown";
+
 interface CleverSearchProps {
   searchQuery?: string;
 }
 
 export const CleverSearch: FC<CleverSearchProps> = ({ searchQuery }) => {
+  const [selectedOption, setSelectedOption] = useState<IProductCategoryItem>(
+    mokCategoriesData[0]
+  );
+
   const navigate = useNavigate();
   const {
     category_id,
@@ -118,31 +127,38 @@ export const CleverSearch: FC<CleverSearchProps> = ({ searchQuery }) => {
   });
 
   return (
-    <div className={styles.cleverSearch}>
-      <div
+    <DropDown
+      maxWidth="100%"
+      isOpen={isFocused && !isSubmitDisabled}
+      dropDownContent={
+        <CleverSearchContent
+          onCategoryClick={() => {}}
+          isLoading={isResultLoading}
+          categoriesData={filteredCategories || []}
+          productsData={productsData?.data.products || []}
+        />
+      }
+    >
+      <Input
         onFocus={onFocusChange}
         onBlur={onBlurChange}
+        onChange={onTextChange}
+        value={text}
         onKeyDown={isEnterPicked}
-      >
-        <Input
-          inputSize="medium"
-          // leftIcon={<LeftArrow />}
-          onChange={onTextChange}
-          value={text}
-          // rightIcon={<SearchIcon />}
-          placeholder="Search Amazon"
-        />
-      </div>
-      {isFocused && !isSubmitDisabled && (
-        <div className={styles.bottomSide}>
-          <CleverSearchContent
-            onCategoryClick={() => {}}
-            isLoading={isResultLoading}
-            categoriesData={filteredCategories || []}
-            productsData={productsData?.data.products || []}
+        placeholder="Search Amazon"
+        backgroundColor="white"
+        leftIcon={
+          <HeaderSelect
+            selectedOption={selectedOption}
+            setSelectedOption={setSelectedOption}
           />
-        </div>
-      )}
-    </div>
+        }
+        rightIcon={
+          <div className={styles.rightSearchButton}>
+            <SearchIcon />
+          </div>
+        }
+      />
+    </DropDown>
   );
 };

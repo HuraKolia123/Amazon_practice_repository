@@ -14,6 +14,8 @@ import { InfoIcon } from "../InfoIcon/InfoIcon";
 
 interface InputProps {
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  onFocus: () => void;
+  onBlur: () => void;
   onKeyDown?: any;
   value: string;
   type?: HTMLInputTypeAttribute;
@@ -22,6 +24,7 @@ interface InputProps {
   helperText?: string;
   maxWidth?: CSSProperties["maxWidth"];
   inputSize?: "extrasmall" | "medium" | "large" | "extralarge";
+  backgroundColor?: "white" | "transparent";
   isBorderDisabled?: boolean;
   isRequired?: boolean;
   isError?: boolean;
@@ -30,9 +33,6 @@ interface InputProps {
   rightIcon?: ReactNode;
   shortKeyIcon?: ReactNode;
   infoText?: string;
-
-  // leftIconError?: ReactNode;
-  // rightIconError?: ReactNode;
 }
 
 export const Input: FC<InputProps> = ({
@@ -43,8 +43,8 @@ export const Input: FC<InputProps> = ({
   onKeyDown,
   helperText,
   label,
-  maxWidth = "323px",
-  inputSize = "medium",
+  maxWidth,
+  inputSize,
   isBorderDisabled = false,
   isRequired = false,
   isError = false,
@@ -53,8 +53,9 @@ export const Input: FC<InputProps> = ({
   rightIcon,
   shortKeyIcon,
   infoText,
-  // leftIconError,
-  // rightIconError,
+  onBlur,
+  onFocus,
+  backgroundColor = "transparent",
 }) => {
   const [isFocused, setIsFocused] = useState(false);
 
@@ -93,6 +94,7 @@ export const Input: FC<InputProps> = ({
           [styles.inputWrapperBorderError]: isError && !isDisabled,
           [styles.inputWrapperErrorFocused]: isFocused && isError,
           [styles.inputWrapperDisabled]: isDisabled,
+          [styles.bgWhite]: backgroundColor === "white",
         })}
         onFocus={focusedToggle}
         onBlur={focusedToggle}
@@ -113,6 +115,8 @@ export const Input: FC<InputProps> = ({
           value={value}
           onKeyDown={onKeyDown}
           placeholder={placeholder}
+          onFocus={onFocus}
+          onBlur={onBlur}
         />
         {rightIcon && <div className={styles.icon}>{rightIcon}</div>}
         {shortKeyIcon && (

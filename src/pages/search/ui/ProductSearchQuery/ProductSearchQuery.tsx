@@ -3,16 +3,17 @@ import { FC, useEffect } from "react";
 //redux
 import { useDispatch, useSelector } from "react-redux";
 import { getProductPageState } from "../../model/selectors";
+import { productPageActions } from "../../model/slice";
 //ui
 import { ProductPagination } from "../ProductPagination";
+import { ErrorComponent } from "@/shared/ui/Error/ErrorComponent";
+import { Loader } from "@/shared/ui/Loader";
 // entities
 import { ProductItemList } from "@/entities/product/productSearch";
 //types
 import { useGetProductSearchItemsQuery } from "@/entities/product/productSearch";
 // styles
 import styles from "./ProductSearchQuery.module.scss";
-import { Loader } from "@/shared/ui/Loader";
-import { productPageActions } from "../../model/slice";
 
 interface ProductSearchQueryProps {
   searchQuery?: string;
@@ -69,7 +70,7 @@ export const ProductSearchQuery: FC<ProductSearchQueryProps> = ({
   }
 
   if (isError) {
-    return <div className={styles.error}>Something went wrong!</div>;
+    return <ErrorComponent />;
   }
 
   return (

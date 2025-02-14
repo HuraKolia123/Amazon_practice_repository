@@ -1,14 +1,16 @@
 // react
 import { FC } from "react";
-// styles
-import styles from "./HeaderDrawer.module.scss";
-import { Drawer } from "@/widgets/drawer_/ui/Drawer/Drawer";
 //assets
 import SignIn from "../../libs/assets/png/SignIn.png";
-// styles
+//query
 import { useGetCategoryItemsQuery } from "@/entities/utility/productCategoryList";
+//ui
+import { ProductCategoryQuery } from "@/pages/search/ui/ProductCategoryQuery";
+import { Drawer } from "@/widgets/drawer_/ui/Drawer/Drawer";
 import { Loader } from "@/shared/ui/Loader";
-import { ProductCategoriesList } from "@/pages/search/ui/ProductCategoriesList";
+// styles
+import styles from "./HeaderDrawer.module.scss";
+import { ErrorComponent } from "@/shared/ui/Error/ErrorComponent";
 
 interface HeaderDrawerProps {
   isOpen: boolean;
@@ -25,16 +27,14 @@ export const HeaderDrawer: FC<HeaderDrawerProps> = ({ isOpen, onClose }) => {
 
   const getDrawerContent = () => {
     if (isLoading || isFetching) {
-      // TODO change classnameCOntainer
-      return <Loader className="fakofa" />;
+      return <Loader className={styles.categoryLoader} />;
     }
 
     if (error) {
-      // TODO change classnameCOntainer
-      return <div className={styles.error}>Something went wrong....</div>;
+      return <ErrorComponent className={styles.errorCategory} />;
     }
 
-    return <ProductCategoriesList />;
+    return <ProductCategoryQuery />;
   };
 
   return (

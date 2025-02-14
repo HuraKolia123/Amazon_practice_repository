@@ -14,19 +14,31 @@
 // }
 
 .cleverSearch {
-  display: flex;
-  justify-content: center;
   width: 100%;
-  position: relative;
-  background: white;
-  max-width: 786px;
+  max-width: 832px;
 }
 .bottomSide {
   width: 580px;
   background-color: #fff;
-  height: 300px;
+  height: 350px;
   border-radius: 4px;
   overflow-y: auto;
   position: absolute;
   top: 46px;
+}
+.rightSearchButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 40px;
+  background-color: #febd69;
+  cursor: pointer;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+
+  &:hover {
+    transition: background-color 0.3s;
+    background-color: #eb992f;
+  }
 }

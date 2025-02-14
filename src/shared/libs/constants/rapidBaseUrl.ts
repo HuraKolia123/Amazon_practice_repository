@@ -1,3 +1,1 @@
-// TODO RAPID_BASE_URL
-
-export const RapidBaseUrl = "https://real-time-amazon-data.p.rapidapi.com";
+export const RAPID_BASE_URL = "https://real-time-amazon-data.p.rapidapi.com";

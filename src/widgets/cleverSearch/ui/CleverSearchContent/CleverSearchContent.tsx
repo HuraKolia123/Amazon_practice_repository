@@ -24,11 +24,7 @@ export const CleverSearchContent: FC<CleverSearchContentProps> = ({
   onCategoryClick,
 }) => {
   if (isLoading) {
-    return (
-      <div className={styles.loader}>
-        <Loader />
-      </div>
-    );
+    return <Loader className={styles.loader} />;
   }
 
   const isCategoriesEmpty = categoriesData.length === 0;

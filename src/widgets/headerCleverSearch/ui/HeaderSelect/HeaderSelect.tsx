@@ -1,25 +1,18 @@
 // react
-import { FC, useState } from "react";
+import { FC, useRef, useState } from "react";
 //assets
 import ChevronDown from "../../../header/libs/assets/svg/chevron_down.svg?react";
 // styles
 import styles from "./HeaderSelect.module.scss";
 import { HeaderOptionList } from "../HeaderOptionList/HeaderOptionList";
+import { mokCategoriesData } from "@/pages/search/libs/constants/mokCategoriesData";
+import { IProductCategoryItem } from "@/entities/utility/productCategoryList/model/types/productCategoryList";
+import { useClickOutside } from "@/shared/libs/hooks/useClickOutside";
 
 interface HeaderSelectProps {
-  selectedOption: string;
-  setSelectedOption: (value: string) => void;
+  selectedOption: IProductCategoryItem;
+  setSelectedOption: (value: IProductCategoryItem) => void;
 }
-
-const optionsArray = [
-  "Baby",
-  "Electrolnics",
-  "Automotive",
-  "Deals",
-  "All Departments",
-  "Digital music",
-  "Luggage",
-];
 
 export const HeaderSelect: FC<HeaderSelectProps> = ({
   selectedOption,
@@ -27,26 +20,31 @@ export const HeaderSelect: FC<HeaderSelectProps> = ({
 }) => {
   const [isSelectOpen, setIsSelectOpen] = useState(false);
 
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  useClickOutside(ref, () => setIsSelectOpen(false));
+
   const selectToggle = () => {
     setIsSelectOpen(!isSelectOpen);
   };
 
-  const onSelectOption = (value: string) => {
+  const onSelectOption = (value: IProductCategoryItem) => {
+    console.log("select");
     setSelectedOption(value);
     setIsSelectOpen(false);
   };
   return (
     <>
       <div className={styles.HeaderSelect} onClick={selectToggle}>
-        <div className={styles.text}>{selectedOption}</div>
+        <div className={styles.text}>{selectedOption.name}</div>
         <div className={styles.openingIcon}>
           <ChevronDown />
         </div>
       </div>
       {isSelectOpen && (
-        <div className={styles.selectContent}>
+        <div className={styles.selectContent} ref={ref}>
           <HeaderOptionList
-            optionItems={optionsArray}
+            optionItems={mokCategoriesData}
             pickOption={onSelectOption}
           />
         </div>
