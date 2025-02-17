@@ -8,3 +8,21 @@
     color: #666666;
   }
 }
+
+.active {
+  background: #007bff;
+  color: white;
+  font-weight: bold;
+}
+.mokCategoryName {
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 16px;
+  font-family: "Amazon Ember", Arial, sans-serif;
+  text-align: center;
+  padding: 5px;
+  &:hover {
+    width: 100%;
+    background-color: #c8c9cc;
+  }
+}

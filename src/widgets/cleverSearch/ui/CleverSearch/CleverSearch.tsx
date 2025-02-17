@@ -1,5 +1,8 @@
 // react
 import { ChangeEvent, FC, useState } from "react";
+//redax
+import { useSelector } from "react-redux";
+import { CleverSearchSelectCategory } from "../CleverSearchSelectCategory/CleverSearchSelectCategory";
 //debouncoing
 import { useDebounce } from "../../../../shared/libs/hooks/useDebounce";
 //react-router
@@ -13,29 +16,19 @@ import { buildUrlWithSearchParams } from "@/shared/libs/utils/buildUrlWithSearch
 //assets
 import SearchIcon from "../../assets/svg/searchIcon.svg?react";
 //ui
+import { DropDown } from "@/shared/ui/dropDown";
 import { CleverSearchContent } from "../CleverSearchContent";
-// import { Input } from "@/shared/ui/Input";
+import { Input } from "@/shared/ui/Input";
 
 // styles
 import styles from "./CleverSearch.module.scss";
-import { useSelector } from "react-redux";
 import { getProductPageState } from "@/pages/search/model/selectors";
-
-import { Input } from "@/shared/ui/Input";
-import { HeaderSelect } from "@/widgets/headerCleverSearch/ui/HeaderSelect/HeaderSelect";
-import { IProductCategoryItem } from "@/entities/utility/productCategoryList/model/types/productCategoryList";
-import { mokCategoriesData } from "@/pages/search/libs/constants/mokCategoriesData";
-import { DropDown } from "@/widgets/dropDown";
 
 interface CleverSearchProps {
   searchQuery?: string;
 }
 
 export const CleverSearch: FC<CleverSearchProps> = ({ searchQuery }) => {
-  const [selectedOption, setSelectedOption] = useState<IProductCategoryItem>(
-    mokCategoriesData[0]
-  );
-
   const navigate = useNavigate();
   const {
     category_id,
@@ -147,12 +140,7 @@ export const CleverSearch: FC<CleverSearchProps> = ({ searchQuery }) => {
         onKeyDown={isEnterPicked}
         placeholder="Search Amazon"
         backgroundColor="white"
-        leftIcon={
-          <HeaderSelect
-            selectedOption={selectedOption}
-            setSelectedOption={setSelectedOption}
-          />
-        }
+        leftIcon={<CleverSearchSelectCategory />}
         rightIcon={
           <div className={styles.rightSearchButton}>
             <SearchIcon />

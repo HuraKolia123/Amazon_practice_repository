@@ -14,7 +14,6 @@ export const HeaderOption: FC<HeaderOptionProps> = ({
   pickOption,
 }) => {
   const onChangeOptionClick = () => {
-    console.log("option");
     pickOption(optionItem);
   };
 

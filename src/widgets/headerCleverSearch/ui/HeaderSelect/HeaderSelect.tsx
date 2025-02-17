@@ -29,12 +29,11 @@ export const HeaderSelect: FC<HeaderSelectProps> = ({
   };
 
   const onSelectOption = (value: IProductCategoryItem) => {
-    console.log("select");
     setSelectedOption(value);
     setIsSelectOpen(false);
   };
   return (
-    <>
+    <div className={styles.wrapper} ref={ref}>
       <div className={styles.HeaderSelect} onClick={selectToggle}>
         <div className={styles.text}>{selectedOption.name}</div>
         <div className={styles.openingIcon}>
@@ -42,13 +41,13 @@ export const HeaderSelect: FC<HeaderSelectProps> = ({
         </div>
       </div>
       {isSelectOpen && (
-        <div className={styles.selectContent} ref={ref}>
+        <div className={styles.selectContent}>
           <HeaderOptionList
             optionItems={mokCategoriesData}
             pickOption={onSelectOption}
           />
         </div>
       )}
-    </>
+    </div>
   );
 };

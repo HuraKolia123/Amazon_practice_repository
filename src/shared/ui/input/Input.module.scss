@@ -91,8 +91,9 @@
 }
 
 .focusStyles {
-  border-color: #84caff;
-  box-shadow: 0px 0px 0px 4px #2e90fa3d;
+  // border-color: #84caff;
+  // box-shadow: 0px 0px 0px 4px #2e90fa3d;
+  box-shadow: 0px 0px 0px 4px #f59e19; // зміни під амазон
 }
 
 .inputWrapperBorderDisabled {
@@ -158,4 +159,8 @@
 
 .bgWhite {
   background-color: white;
+}
+
+.bgTransparent {
+  background-color: transparent;
 }

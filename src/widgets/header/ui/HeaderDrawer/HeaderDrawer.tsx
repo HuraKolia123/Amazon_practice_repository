@@ -1,16 +1,22 @@
 // react
 import { FC } from "react";
 //assets
-import SignIn from "../../libs/assets/png/SignIn.png";
 //query
-import { useGetCategoryItemsQuery } from "@/entities/utility/productCategoryList";
+// import { useGetCategoryItemsQuery } from "@/entities/utility/productCategoryList";
 //ui
-import { ProductCategoryQuery } from "@/pages/search/ui/ProductCategoryQuery";
+// import { ProductCategoryQuery } from "@/pages/search/ui/ProductCategoryQuery";
 import { Drawer } from "@/widgets/drawer_/ui/Drawer/Drawer";
-import { Loader } from "@/shared/ui/Loader";
+// import { Loader } from "@/shared/ui/Loader";
 // styles
 import styles from "./HeaderDrawer.module.scss";
-import { ErrorComponent } from "@/shared/ui/Error/ErrorComponent";
+// import { ErrorComponent } from "@/shared/ui/Error/ErrorComponent";
+import { mokCategoriesData } from "@/pages/search/libs/constants/mokCategoriesData";
+import { useDispatch, useSelector } from "react-redux";
+import { getCategory } from "@/pages/search/model/selectors";
+import { IProductCategoryItem } from "@/entities/utility/productCategoryList/model/types/productCategoryList";
+import { productPageActions } from "@/pages/search/model/slice";
+import { ProductCategoryItem } from "@/entities/utility/productCategoryList/ui/productCategoryItem";
+import { HeaderDrawerTopSide } from "../HeaderDrawerTopSide/HeaderDrawerTopSide";
 
 interface HeaderDrawerProps {
   isOpen: boolean;
@@ -18,34 +24,57 @@ interface HeaderDrawerProps {
 }
 
 export const HeaderDrawer: FC<HeaderDrawerProps> = ({ isOpen, onClose }) => {
-  const { isFetching, isLoading, error } = useGetCategoryItemsQuery(
-    {
-      country: "US",
-    },
-    { skip: !isOpen }
-  );
+  const dispatch = useDispatch();
 
-  const getDrawerContent = () => {
-    if (isLoading || isFetching) {
-      return <Loader className={styles.categoryLoader} />;
-    }
+  const selectedCategoryId = useSelector(getCategory);
 
-    if (error) {
-      return <ErrorComponent className={styles.errorCategory} />;
-    }
-
-    return <ProductCategoryQuery />;
+  const onCategoryClick = (id: IProductCategoryItem["id"]) => {
+    dispatch(productPageActions.setCategory(id));
   };
+
+  // const mokCategoryList = mokCategoriesData.map((item) => {
+  //   return (
+  //     <div className={styles.mokCategoryName} key={item.id}>
+  //       {item.name}
+  //     </div>
+  //   );
+  // });
 
   return (
     <Drawer isOpen={isOpen} onClose={onClose}>
-      <div className={styles.topDrawerSide}>
-        <div className={styles.photo}>
-          <img src={SignIn} alt="sign in..." />
-        </div>
-        <div className={styles.text}> Hello, sign in</div>
+      <HeaderDrawerTopSide />
+      <div className={styles.bottomDrawerSide}>
+        {mokCategoriesData.map((item) => {
+          return (
+            <ProductCategoryItem
+              id={item.id}
+              key={item.id}
+              name={item.name}
+              onCategoryClick={onCategoryClick}
+              isSelected={selectedCategoryId === item.id}
+            />
+          );
+        })}
       </div>
-      <div className={styles.bottomDrawerSide}>{getDrawerContent()}</div>
     </Drawer>
   );
 };
+
+// const { isFetching, isLoading, error } = useGetCategoryItemsQuery(
+//   {
+//     country: "US",
+//   },
+//   { skip: !isOpen }
+// );
+
+// const getDrawerContent = () => {
+//   if (isLoading || isFetching) {
+//     return <Loader className={styles.categoryLoader} />;
+//   }
+
+//   if (error) {
+//     return <ErrorComponent className={styles.errorCategory} />;
+//   }
+
+//   return <ProductCategoryQuery />;
+// };

@@ -95,6 +95,7 @@ export const Input: FC<InputProps> = ({
           [styles.inputWrapperErrorFocused]: isFocused && isError,
           [styles.inputWrapperDisabled]: isDisabled,
           [styles.bgWhite]: backgroundColor === "white",
+          [styles.bgTransparent]: backgroundColor === "transparent",
         })}
         onFocus={focusedToggle}
         onBlur={focusedToggle}
