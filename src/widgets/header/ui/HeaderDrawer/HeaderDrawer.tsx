@@ -32,14 +32,6 @@ export const HeaderDrawer: FC<HeaderDrawerProps> = ({ isOpen, onClose }) => {
     dispatch(productPageActions.setCategory(id));
   };
 
-  // const mokCategoryList = mokCategoriesData.map((item) => {
-  //   return (
-  //     <div className={styles.mokCategoryName} key={item.id}>
-  //       {item.name}
-  //     </div>
-  //   );
-  // });
-
   return (
     <Drawer isOpen={isOpen} onClose={onClose}>
       <HeaderDrawerTopSide />

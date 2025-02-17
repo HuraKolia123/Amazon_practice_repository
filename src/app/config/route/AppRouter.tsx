@@ -6,7 +6,11 @@ import { Route, Routes } from "react-router-dom";
 import { HomePage } from "@/pages/home/ui/HomePage/HomePage";
 import { ProductSearchPage } from "@/pages/search";
 // constants
-import { getHomeRoute, getProductsRoute } from "@/shared/libs/constants/routes";
+import {
+  getHomeRoute,
+  getProductsRoute,
+  getSingleProductRoute,
+} from "@/shared/libs/constants/routes";
 import { HeaderLayout } from "@/app/layout/HeaderLayout/HeaderLayout";
 
 interface AppRouterProps {}
@@ -17,6 +21,7 @@ export const AppRouter: FC<AppRouterProps> = ({}) => {
       <Route element={<HeaderLayout />}>
         <Route path={getHomeRoute()} element={<HomePage />} />
         <Route path={getProductsRoute()} element={<ProductSearchPage />} />
+        <Route path={getSingleProductRoute(":asin")} element={<HomePage />} />
       </Route>
     </Routes>
   );
