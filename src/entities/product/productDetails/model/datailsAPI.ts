@@ -18,4 +18,6 @@ export interface GetDetailsOfProductsResponse {
  * Тип GetDetailsOfProductsRequest позначає, що запит на отримання деталей продуктів
  * не потребує передачі додаткових параметрів.
  */
-export type GetDetailsOfProductsRequest = void;
+export interface GetDetailsOfProductsRequest {
+  asin: string;
+}

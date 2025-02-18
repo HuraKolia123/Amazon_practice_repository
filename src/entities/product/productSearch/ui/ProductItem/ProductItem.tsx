@@ -8,12 +8,12 @@ import { StarRating } from "@/shared/ui/StarRating/StarRating";
 import ChevronDown from "../../../../../widgets/header/libs/assets/svg/chevron_down.svg?react";
 import { Button } from "@/shared/ui/Button";
 import { Link } from "react-router-dom";
-import { HomePage } from "@/pages/home";
 import { getSingleProductRoute } from "@/shared/libs/constants/routes";
 
 interface ProductItemProps extends IProduct {}
 
 export const ProductItem: FC<ProductItemProps> = ({
+  asin,
   product_price,
   product_title,
   product_photo,
@@ -27,7 +27,7 @@ export const ProductItem: FC<ProductItemProps> = ({
   return (
     <div className={styles.ProductItem}>
       <div className={styles.topBlock}>
-        <Link to={getSingleProductRoute(":asin")}>
+        <Link to={getSingleProductRoute(asin)} className={styles.link}>
           <div className={styles.imageContainer}>
             <img
               src={product_photo}

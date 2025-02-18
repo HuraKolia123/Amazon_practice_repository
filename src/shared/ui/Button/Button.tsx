@@ -38,7 +38,6 @@ export const Button: FC<ButtonProps> = memo(
     buttonVariant = "Fill",
     buttonStyleVariant = "Accent",
   }) => {
-    console.log("render");
     return (
       <button
         onClick={onClick}

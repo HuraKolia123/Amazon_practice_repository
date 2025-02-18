@@ -12,6 +12,7 @@ import {
   getSingleProductRoute,
 } from "@/shared/libs/constants/routes";
 import { HeaderLayout } from "@/app/layout/HeaderLayout/HeaderLayout";
+import { ProductDetailsPage } from "@/pages/product-details/ui/ProductDetailsPage/ProductDetailsPage";
 
 interface AppRouterProps {}
 
@@ -21,7 +22,10 @@ export const AppRouter: FC<AppRouterProps> = ({}) => {
       <Route element={<HeaderLayout />}>
         <Route path={getHomeRoute()} element={<HomePage />} />
         <Route path={getProductsRoute()} element={<ProductSearchPage />} />
-        <Route path={getSingleProductRoute(":asin")} element={<HomePage />} />
+        <Route
+          path={getSingleProductRoute(":asin")}
+          element={<ProductDetailsPage />}
+        />
       </Route>
     </Routes>
   );
