@@ -1,0 +1,1 @@
+export { ProductReviewPhotosArrayModal } from "./ProductReviewPhotosArrayModal";

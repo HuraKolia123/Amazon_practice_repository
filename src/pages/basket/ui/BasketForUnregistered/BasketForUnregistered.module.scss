@@ -1,0 +1,122 @@
+// .UnregisteredBasketPage {
+//   width: 100%;
+//   padding: 20px;
+//   background-color: #e9edee;
+//   height: 100vh;
+//   display: flex;
+//   justify-content: center;
+// }
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 20px;
+  width: 100%;
+  height: 100vh;
+  background-color: #e9edee;
+}
+
+.topSide {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: white;
+}
+.leftIcon {
+  //   max-width: 359px;
+  //   max-height: 206px;
+  //   width: 100%;
+  //   height: 100vh;
+  width: 359px;
+}
+
+.rightPart {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header {
+  font-size: 24px;
+  font-size: 700;
+  cursor: pointer;
+  line-height: 32px;
+}
+.todaysDeals {
+  color: rgb(33, 98, 161);
+
+  &:hover {
+    text-decoration: underline black 0.5px;
+    color: black;
+  }
+}
+
+.btnBlock {
+  display: flex;
+  gap: 10px;
+}
+
+.signInBtn {
+  text-decoration: none;
+  button {
+    height: 29px;
+    border-radius: 14px;
+    background-color: #fed813;
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    cursor: pointer;
+    &:hover {
+      transition: background-color 0.3sec;
+      background-color: #e5c527;
+    }
+  }
+}
+
+.signUpBtn {
+  text-decoration: none;
+
+  button {
+    height: 29px;
+    border-radius: 14px;
+    background-color: #fff;
+    font-size: 13px;
+    line-height: 29px;
+    color: black;
+    cursor: pointer;
+    border: 1px solid black;
+
+    &:hover {
+      transition: background-color 0.3sec;
+      background-color: rgb(246, 243, 243);
+    }
+  }
+}
+
+.middleSide {
+  width: 100%;
+  height: 114px;
+  background-color: white;
+}
+
+.bottomSide {
+  width: 1164px;
+}
+
+span {
+  color: #2a6192;
+
+  &:hover {
+    text-decoration: underline black;
+    color: black;
+  }
+}
+
+.text {
+  font-size: 12px;
+  line-height: 16px;
+}

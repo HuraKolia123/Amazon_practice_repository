@@ -16,6 +16,7 @@ export const FilterSection: FC<FilterSectionProps> = ({
   title,
   sectionItems,
   selectSectionItem,
+  selectedSectionItem,
 }) => {
   return (
     <div className={styles.FilterSection}>
@@ -23,6 +24,7 @@ export const FilterSection: FC<FilterSectionProps> = ({
       <FilterSectionItemList
         sectionItems={sectionItems}
         selectSectionItem={selectSectionItem}
+        selectedSectionItem={selectedSectionItem}
       />
     </div>
   );

@@ -1,0 +1,21 @@
+<svg 
+    width="24" 
+    height="24" 
+    viewBox="0 0 48 48" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <path 
+        d="M24 30V10M24 10L16 18M24 10L32 18" 
+        stroke="black" 
+        stroke-width="3" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+    />
+    <path 
+        d="M10 28V36C10 37.1046 10.8954 38 12 38H36C37.1046 38 38 37.1046 38 36V28" 
+        stroke="black" 
+        stroke-width="3" 
+        stroke-linecap="round"
+    />
+</svg>

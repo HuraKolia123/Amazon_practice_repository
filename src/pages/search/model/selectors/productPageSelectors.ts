@@ -23,3 +23,6 @@ export const getCategory = (state: StateSchema) =>
 
 export const getTotalProducts = (state: StateSchema) =>
   state.productPage.total_products;
+
+export const getCategoryId = (state: StateSchema) =>
+  state.productPage.category_id;

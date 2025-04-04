@@ -1,14 +1,18 @@
 // react
 import { FC } from "react";
+//react-router
+import { Link } from "react-router-dom";
+//ui
+import { StarRating } from "@/shared/ui/StarRating/StarRating";
+import { Button } from "@/shared/ui/Button";
+//constants
+import { getSingleProductRoute } from "@/shared/libs/constants/routes";
+//assets
+import ChevronDown from "@/shared/libs/assets/svg/chevron_down.svg?react";
 // types
 import { IProduct } from "../../model/product";
 // styles
 import styles from "./ProductItem.module.scss";
-import { StarRating } from "@/shared/ui/StarRating/StarRating";
-import ChevronDown from "../../../../../widgets/header/libs/assets/svg/chevron_down.svg?react";
-import { Button } from "@/shared/ui/Button";
-import { Link } from "react-router-dom";
-import { getSingleProductRoute } from "@/shared/libs/constants/routes";
 
 interface ProductItemProps extends IProduct {}
 

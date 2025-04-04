@@ -1,0 +1,91 @@
+.BasketItem {
+  padding: 20px;
+  max-width: 750px;
+  width: 100%;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border: 1px solid grey;
+  gap: 20px;
+  border-radius: 8px;
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: #e2e9f0;
+  }
+}
+
+.leftItemSide {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  svg {
+    cursor: pointer;
+  }
+}
+
+.goodInfoSide {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-grow: 1;
+  min-width: 150px;
+}
+
+.imageBlock {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.goodName {
+  font-size: 16px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.quantityAndPriceBlock {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-width: 180px;
+}
+
+.quantityBlock {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 6px;
+  background-color: #e2e9f0;
+  width: 32px;
+  height: 32px;
+  border: none;
+}
+
+.quantity {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.priceBlock {
+  font-size: 18px;
+  font-weight: bold;
+}

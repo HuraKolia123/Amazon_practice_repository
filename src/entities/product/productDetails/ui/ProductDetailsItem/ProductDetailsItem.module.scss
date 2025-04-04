@@ -1,0 +1,193 @@
+.allContent {
+  width: 100%;
+}
+
+.ProductDetailsItem {
+  // max-width: 1464px;
+  width: 100%;
+  padding: 20px 0px 0px 20px;
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+.infoProductBlock {
+  display: flex;
+  flex-direction: column;
+  max-width: 666px;
+  width: 100%;
+  height: 100%;
+}
+
+.productTitle {
+  font-size: 24px;
+  line-height: 32px;
+  cursor: pointer;
+}
+.ratingBlock {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.productByLineLink {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.productRating {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.productStars {
+  display: flex;
+  align-items: center;
+}
+
+.chevronDownIcon {
+  svg {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2px;
+  }
+}
+.ratingsQuantiti {
+  color: rgb(33, 98, 161);
+  font-size: 14px;
+  line-height: 20px;
+  font-style: "Amazon Ember", Arial, sans-serif;
+  &:hover {
+    text-decoration: underline;
+    color: black;
+  }
+}
+
+.productInformationLink {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    color: black;
+  }
+}
+
+.amazonChoice {
+  height: 21px;
+  width: 113px;
+  background: #232f3f;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  span {
+    color: #ef9b3c;
+  }
+}
+// .horizontalLine {
+//   width: 100%;
+//   height: 1px;
+//   background-color: #ccc;
+//   margin: 10px 0;
+// }
+.additionalProductInfo {
+  max-width: 638px;
+  width: 100%;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.infoAboutVersion {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.productDescription {
+  padding-left: 15px;
+  position: relative;
+  display: flex;
+  gap: 5px;
+  position: relative;
+}
+
+.aboutThisItem {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+  left: 0px;
+}
+
+.bottomReportBlock {
+  display: flex;
+  flex-direction: column;
+}
+.report {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+}
+.reportLink {
+  text-decoration: none;
+  color: #2b6094;
+
+  &:hover {
+    text-decoration: underline;
+    color: black;
+  }
+}
+
+.productNote {
+  span {
+    font-weight: 700;
+    line-height: 20px;
+  }
+}
+
+.messageIcon {
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+  svg {
+    width: 19px;
+    height: 19px;
+  }
+}
+
+.key {
+  max-width: 152.73px;
+  width: 100%;
+  padding: 3px 3px 3px 0px;
+}
+
+.value {
+  max-width: 485px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  font-style: "Amazon Ember", Arial, sans-serif;
+  font-weight: normal;
+  padding: 3px 0px 0px 3px;
+}

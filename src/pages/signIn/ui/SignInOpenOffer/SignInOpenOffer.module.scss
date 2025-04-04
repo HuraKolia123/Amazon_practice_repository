@@ -1,0 +1,27 @@
+.textWithIcon {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.offer {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.helpedText {
+  color: #007185;
+  cursor: pointer;
+  line-height: 20px;
+  &:hover {
+    color: rgb(206, 61, 61);
+    text-decoration: underline;
+  }
+}

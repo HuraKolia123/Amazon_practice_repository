@@ -10,21 +10,28 @@ import { IProductCategoryItem } from "@/entities/utility/productCategoryList/mod
 
 // styles
 import styles from "./CleverSearchContent.module.scss";
+import { ErrorComponent } from "@/shared/ui/Error/ErrorComponent";
 
 interface CleverSearchContentProps {
   onCategoryClick: (categoryId: string) => void;
   categoriesData: IProductCategoryItem[];
   productsData: IProduct[];
   isLoading: boolean;
+  isError: boolean;
 }
 export const CleverSearchContent: FC<CleverSearchContentProps> = ({
   categoriesData,
   productsData,
   isLoading,
   onCategoryClick,
+  isError,
 }) => {
   if (isLoading) {
     return <Loader className={styles.loader} />;
+  }
+
+  if (isError) {
+    return <ErrorComponent className={styles.cleverSearchContentError} />;
   }
 
   const isCategoriesEmpty = categoriesData.length === 0;

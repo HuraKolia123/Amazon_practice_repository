@@ -1,3 +1,261 @@
 .HomePage {
-  padding: 200px 0px 0px 100px;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  gap: 20px;
+  background-image: url("../../libs/assets/jpg/amazonHomePageLogo.jpg");
+  font-family: "Amazon Ember", Arial, sans-serif;
+}
+
+.topCategoriesInKitchen,
+.shopGaming,
+.officeGoods,
+.shopDealsinFashion {
+  max-width: 360px;
+  min-height: 400px; // Мінімальна висота
+  height: auto; // Автоматична висота
+  width: 100%;
+  background-color: white;
+  padding: 10px;
+}
+
+.content {
+  display: flex;
+  padding: 10px;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.topCategoriesInKitchen {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 20px 0px 20px;
+}
+.header {
+  max-width: 330px;
+  width: 100%;
+  padding: 0px 20px;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 27.3px;
+}
+.routerLink {
+  text-decoration: none;
+  color: inherit;
+}
+.firstImage {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.topKitchenImage {
+  max-width: 330px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.imageHeader {
+  font-size: 15px;
+  line-height: 19.5px;
+  text-decoration: none;
+}
+
+.bottomImages {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.image {
+  cursor: pointer;
+}
+.productLink {
+  padding-top: 10px;
+  font-size: 13px;
+  line-height: 16.9px;
+  color: rgb(33, 98, 161);
+  cursor: pointer;
+
+  &:hover {
+    color: black;
+  }
+}
+
+.gamingAccessories {
+  display: flex;
+  flex-direction: column;
+  // gap: 20px;
+  flex: 1;
+  max-width: 360px;
+  min-height: 400px;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  padding-top: 8px;
+}
+
+.photosBlock {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.computerImagesTopSide {
+  display: flex;
+  gap: 10px;
+}
+
+.computerImagesBottomSide {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.computerImage {
+  cursor: pointer;
+  min-width: 160px;
+  width: 100%;
+  min-height: 105px;
+}
+
+.bottomText {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.productComputerLink {
+  width: 100%;
+  font-size: 13px;
+  line-height: 16.9px;
+  color: rgb(33, 98, 161);
+  cursor: pointer;
+  padding-top: 10px;
+
+  &:hover {
+    color: black;
+  }
+}
+
+////////====
+
+.shopGaming {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+}
+.shopGamingLink {
+  max-width: 340px;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+.shopGamingHeader {
+  max-width: 330px;
+  width: 100%;
+  padding: 0px 20px;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 27.3px;
+  cursor: auto;
+}
+.officeGoods {
+  max-width: 360px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+}
+
+.productLinkOffice {
+  padding-top: 25px;
+  font-size: 13px;
+  line-height: 16.9px;
+  color: rgb(33, 98, 161);
+  cursor: pointer;
+
+  &:hover {
+    color: black;
+  }
+}
+.gamingAndOfficeImage {
+  max-width: 340px;
+  width: 100%;
+  max-height: 272px;
+  height: 100vh;
+}
+
+.shopDealsinFashion {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+}
+
+.signInSide {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-height: 150px;
+  height: 100vh;
+  background-color: white;
+  align-items: center;
+}
+
+.recommendations {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.btnSide {
+  max-width: 250px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  button {
+    width: 100%;
+    background-color: #fed813;
+    color: black;
+    font-weight: normal;
+    height: 29px;
+    border-radius: 20px;
+    font-size: 13px;
+
+    &:hover {
+      transition: background-color 0.3s;
+      background-color: #edc70b;
+    }
+  }
+}
+
+.question {
+  font-size: 11px;
+  line-height: 15px;
+  cursor: pointer;
+
+  span {
+    color: blue;
+    text-decoration: underline blue;
+    &:hover {
+      text-decoration: underline black;
+      color: black;
+    }
+  }
 }

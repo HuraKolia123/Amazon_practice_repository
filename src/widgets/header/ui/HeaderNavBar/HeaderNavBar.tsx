@@ -1,12 +1,12 @@
 // react
 import { FC } from "react";
 //ui
-import { NavLink } from "../NavLink/NavLink";
+import { HeaderNavLink } from "../HeaderNavLink";
 import { HeaderDrawerButton } from "../HeaderDrawerButton/HeaderDrawerButton";
 //constants
+import { headerNavBarConfig } from "../../libs/constants/headerNavbarConfig";
 // styles
 import styles from "./HeaderNavBar.module.scss";
-import { headerNavBarConfig } from "../../libs/constants/headerNavbarConfig";
 
 interface HeaderNavBarProps {}
 
@@ -15,7 +15,7 @@ export const HeaderNavBar: FC<HeaderNavBarProps> = ({}) => {
     <div className={styles.HeaderNavBar}>
       <HeaderDrawerButton />
       {headerNavBarConfig.map((item) => {
-        return <NavLink text={item.text} key={item.text} />;
+        return <HeaderNavLink text={item.text} key={item.text} />;
       })}
     </div>
   );

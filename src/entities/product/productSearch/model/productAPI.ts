@@ -23,13 +23,13 @@ export interface GetProductSearchItemResponse {
  * не потребує передачі додаткових параметрів.
  */
 export type GetProductSearchItemRequest = {
-  query: string;
-  page: number;
-  country: string;
-  sort_by: SortByType;
-  product_condition: ProductConditionType;
-  deals_and_discounts: ProductDealsAndDiscountsType;
+  query?: string;
+  page?: number;
+  country?: string;
+  sort_by?: SortByType;
+  product_condition?: ProductConditionType;
+  deals_and_discounts?: ProductDealsAndDiscountsType;
   category_id: string;
-  min_price: number;
-  max_price: number;
+  min_price?: number;
+  max_price?: number;
 };

@@ -1,0 +1,14 @@
+.AmazonLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 114px;
+  height: 50px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+
+  &:hover {
+    border-color: white;
+  }
+}

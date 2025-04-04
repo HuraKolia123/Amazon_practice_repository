@@ -1,18 +1,18 @@
 // react
 import { FC } from "react";
+//assets
+import USAflagImage from "../../libs/assets/jpg/USA.jpg";
+//ui
+import { HeaderCountryDeliver } from "../HeaderCountryDeliver";
+import { CountryToggle } from "@/shared/ui/CountryToggle";
+import { AmazonCart } from "@/shared/ui/AmazonCart";
+import { HeaderNavBar } from "../HeaderNavBar";
+import { CleverSearch } from "@/widgets/cleverSearch";
+import { InfoComponent } from "@/widgets/infoComponent";
+import { HeaderSignInButton } from "../HeaderSignInButton/HeaderSignInButton";
+import { AmazonLogo } from "@/shared/ui/AmazonLogo";
 // styles
 import styles from "./Header.module.scss";
-import { AmazonLabel } from "../AmazonLabel/AmazonLabel";
-import { CountryDeliver } from "../CountryDeliver/CountryDeliver";
-//assets
-import USA from "../../libs/assets/jpg/USA.jpg";
-import { CountryToggle } from "../CountryToggle/CountryToggle";
-import ChevronDown from "../../libs/assets/svg/chevron_down.svg?react";
-import { InfoComponent } from "../InfoComponent/InfoComponent";
-import { AmazonCart } from "../AmazonCart/AmazonCart";
-import { HeaderNavBar } from "../HeaderNavBar/HeaderNavBar";
-import { CleverSearch } from "@/widgets/cleverSearch";
-
 interface HeaderProps {}
 
 export const Header: FC<HeaderProps> = ({}) => {
@@ -21,18 +21,15 @@ export const Header: FC<HeaderProps> = ({}) => {
       <div className={styles.Header}>
         <div className={styles.topSide}>
           <div className={styles.leftPart}>
-            <AmazonLabel />
-            <CountryDeliver country="Ukraine" />
+            <div className={styles.labelAndDeliver}>
+              <AmazonLogo />
+              <HeaderCountryDeliver country="Ukraine" />
+            </div>
             <CleverSearch />
           </div>
           <div className={styles.rightPart}>
-            <CountryToggle countryInitials="EN" flag={USA} />
-            <InfoComponent
-              maxWidth={138}
-              topText="Hello, sign in"
-              bottomText="Account & Lists"
-              icon={<ChevronDown />}
-            />
+            <CountryToggle countryInitials="EN" flag={USAflagImage} />
+            <HeaderSignInButton />
             <InfoComponent
               topText="Returns"
               bottomText="& Orders"

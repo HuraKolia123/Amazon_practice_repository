@@ -1,0 +1,1 @@
+export { ProductDetailsHoverZoom } from "./ProductDetailsHoverZoom";

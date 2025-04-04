@@ -1,0 +1,1 @@
+export { ProductDetailsReviewBlock } from "./ProductDetailsReviewBlock";

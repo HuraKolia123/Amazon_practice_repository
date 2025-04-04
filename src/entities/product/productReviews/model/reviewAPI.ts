@@ -1,4 +1,4 @@
-import { IReview } from "./review";
+import { IProductReview } from "./review";
 
 /**
  * Інтерфейс GetReviewsOfProductResponse описує структуру відповіді на запит про відгуки продукту.
@@ -13,12 +13,10 @@ export interface GetReviewsOfProductResponse {
     total_ratings: number; // Загальна кількість оцінок
     country: string; // Код країни (ISO 3166-1 alpha-2)
     domain: string; // Домен країни (наприклад, "amazon.com")
+    reviews: IProductReview[]; // Масив об'єктів, що містять інформацію про окремі відгуки
   };
-  reviews: IReview[]; // Масив об'єктів, що містять інформацію про окремі відгуки
 }
 
-/**
- * Тип GetReviewsOfProductRequest позначає, що запит на отримання відгуків продукту
- * не потребує передачі додаткових параметрів.
- */
-export type GetReviewsOfProductRequest = void;
+export type GetReviewsOfProductRequest = {
+  asin: string;
+};

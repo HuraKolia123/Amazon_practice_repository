@@ -1,0 +1,1 @@
+export { ProductReviewsQuery } from "./ProductReviewsQuery";

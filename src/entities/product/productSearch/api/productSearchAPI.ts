@@ -5,6 +5,7 @@ import {
   GetProductSearchItemResponse,
   GetProductSearchItemRequest,
 } from "../model/productAPI";
+import { buildUrlWithSearchParams } from "@/shared/libs/utils/buildUrlWithSearchParams";
 
 const productSearchAPI = rapidAPI.injectEndpoints({
   endpoints: (builder) => ({
@@ -13,10 +14,7 @@ const productSearchAPI = rapidAPI.injectEndpoints({
       GetProductSearchItemRequest
     >({
       query: (data) => ({
-        url: "/search",
-        params: {
-          ...data,
-        },
+        url: buildUrlWithSearchParams("/search", { ...data }),
         method: "GET",
       }),
     }),

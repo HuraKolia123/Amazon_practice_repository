@@ -1,0 +1,84 @@
+.ProductReviewCommentVersion {
+  max-width: 310px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: "Amazon Ember", Arial, sans-serif;
+}
+
+.avatarAndAuthor {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.name {
+  font-size: 13px;
+  line-height: 19px;
+  cursor: pointer;
+}
+
+.middleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.title {
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.bottomBlock {
+  padding: 20px 0px 20px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.date {
+  font-size: 12px;
+  line-height: 16px;
+  color: rgb(86, 89, 89);
+}
+
+.comment {
+  line-height: 20px;
+}
+
+.imagesBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+
+.text {
+  font-size: 18px;
+  line-height: 24px;
+  color: rgb(86, 89, 89);
+}
+
+.images {
+  display: flex;
+  gap: 20px;
+}
+
+.image {
+  width: 40.8px;
+  height: 40.8px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: border 0.2s ease-in-out;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

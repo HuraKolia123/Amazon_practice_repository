@@ -7,19 +7,26 @@ import { useSelector } from "react-redux";
 import { getTotalProducts } from "../../model/selectors";
 
 interface ProductInfoQueryFieldProps {
-  queryName: string;
+  searchQuery: string;
 }
 
 export const ProductInfoQueryField: FC<ProductInfoQueryFieldProps> = ({
-  queryName,
+  searchQuery,
 }) => {
   const total_products = useSelector(getTotalProducts);
 
   return (
     <div className={styles.ProductInfoQueryField}>
       <div className={styles.goodsInfo}>
-        1-16 of over {total_products} results for
-        <span className={styles.queryName}> "{queryName}"</span>
+        <div>1-16 of over {total_products}</div>
+        {!searchQuery ? (
+          "goods"
+        ) : (
+          <div>
+            results for
+            <span className={styles.queryName}> "{searchQuery}"</span>
+          </div>
+        )}
       </div>
       <ProductSortComponent />
     </div>

@@ -1,0 +1,32 @@
+.ProductCustomerReview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.title {
+  color: rgb(51, 51, 51);
+  font-size: 21px;
+  font-family: "Amazon Ember", Arial, sans-serif;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.evaluation {
+  color: rgb(15, 17, 17);
+  font-family: "Amazon Ember", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.globalRating {
+  color: rgb(86, 89, 89);
+  font-family: "Amazon Ember", Arial, sans-serif;
+  line-height: 20px;
+}

@@ -1,0 +1,42 @@
+.seeMoreContainer {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.seeMoreContent {
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.seeMoreButton {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px;
+  text-decoration: underline;
+}
+
+.seeMoreButton:hover {
+  color: #0056b3;
+}
+
+.lessbtn {
+  display: flex;
+  gap: 5px;
+}
+
+.lessIcon {
+  transform: rotate(180deg);
+  cursor: pointer;
+}
+
+.moreBtn {
+  display: flex;
+  gap: 5px;
+}
+
+.moreIcon {
+  cursor: pointer;
+}

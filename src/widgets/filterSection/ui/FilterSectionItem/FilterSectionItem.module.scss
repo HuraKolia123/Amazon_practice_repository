@@ -6,5 +6,11 @@
   cursor: pointer;
   &:hover {
     color: #de7821;
+    background-color: #f0f0f0;
   }
+}
+
+.selected {
+  background-color: #d3e3fd; // світло-блакитний для виділення
+  font-weight: bold;
 }

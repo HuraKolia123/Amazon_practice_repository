@@ -1,7 +1,7 @@
 // react
 import { FC } from "react";
 //ui
-import { ProductSearchItem } from "../ProductSearchItem/ProductSearchItem";
+import { ProductSearchItem } from "../ProductSearchItem";
 //types
 import { IProduct } from "../../model/product";
 // styles

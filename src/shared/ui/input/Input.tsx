@@ -11,15 +11,17 @@ import {
 import styles from "./Input.module.scss";
 import clsx from "clsx";
 import { InfoIcon } from "../InfoIcon/InfoIcon";
+import { useFormContext } from "react-hook-form";
+import { InputErrors } from "../InputErrors/InputErrors";
 
 interface InputProps {
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  onFocus: () => void;
-  onBlur: () => void;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  onFocus?: () => void;
+  onBlur?: () => void;
   onKeyDown?: any;
-  value: string;
+  value?: string;
   type?: HTMLInputTypeAttribute;
-  placeholder: string;
+  placeholder?: string;
   label?: string;
   helperText?: string;
   maxWidth?: CSSProperties["maxWidth"];
@@ -33,6 +35,8 @@ interface InputProps {
   rightIcon?: ReactNode;
   shortKeyIcon?: ReactNode;
   infoText?: string;
+  isLabelBold?: boolean;
+  hookFormName?: string;
 }
 
 export const Input: FC<InputProps> = ({
@@ -44,7 +48,8 @@ export const Input: FC<InputProps> = ({
   helperText,
   label,
   maxWidth,
-  inputSize,
+  inputSize = "medium",
+  isLabelBold = false,
   isBorderDisabled = false,
   isRequired = false,
   isError = false,
@@ -55,8 +60,11 @@ export const Input: FC<InputProps> = ({
   infoText,
   onBlur,
   onFocus,
+  hookFormName,
   backgroundColor = "transparent",
 }) => {
+  const methods = useFormContext();
+
   const [isFocused, setIsFocused] = useState(false);
 
   const focusedToggle = () => {
@@ -75,6 +83,7 @@ export const Input: FC<InputProps> = ({
               [styles.labelLarge]:
                 inputSize === "large" || inputSize === "extralarge",
               [styles.labelDisabled]: isDisabled,
+              [styles.labelBold]: isLabelBold,
             })}
           >
             {label}
@@ -101,24 +110,41 @@ export const Input: FC<InputProps> = ({
         onBlur={focusedToggle}
       >
         {leftIcon && <div className={styles.icon}>{leftIcon}</div>}
-        <input
-          id="input"
-          disabled={isDisabled}
-          className={clsx(styles.Input, {
-            [styles.inputFontSizeSmall]:
-              inputSize === "extrasmall" || inputSize === "medium",
-            [styles.inputFontSizeLarge]:
-              inputSize === "large" || inputSize === "extralarge",
-            [styles.inputDisabled]: isDisabled,
-          })}
-          onChange={onChange}
-          type={type}
-          value={value}
-          onKeyDown={onKeyDown}
-          placeholder={placeholder}
-          onFocus={onFocus}
-          onBlur={onBlur}
-        />
+        {!hookFormName || !methods?.register(hookFormName) ? (
+          <input
+            disabled={isDisabled}
+            className={clsx(styles.Input, {
+              [styles.inputFontSizeSmall]:
+                inputSize === "extrasmall" || inputSize === "medium",
+              [styles.inputFontSizeLarge]:
+                inputSize === "large" || inputSize === "extralarge",
+              [styles.inputDisabled]: isDisabled,
+            })}
+            onChange={onChange}
+            type={type}
+            value={value}
+            onKeyDown={onKeyDown}
+            placeholder={placeholder}
+            onFocus={onFocus}
+            onBlur={onBlur}
+          />
+        ) : (
+          <input
+            {...methods?.register(hookFormName)}
+            disabled={isDisabled}
+            className={clsx(styles.Input, {
+              [styles.inputFontSizeSmall]:
+                inputSize === "extrasmall" || inputSize === "medium",
+              [styles.inputFontSizeLarge]:
+                inputSize === "large" || inputSize === "extralarge",
+              [styles.inputDisabled]: isDisabled,
+            })}
+            type={type}
+            onKeyDown={onKeyDown}
+            placeholder={placeholder}
+            onFocus={onFocus}
+          />
+        )}
         {rightIcon && <div className={styles.icon}>{rightIcon}</div>}
         {shortKeyIcon && (
           <div className={styles.shortKeyIcon}>{shortKeyIcon}</div>
@@ -133,6 +159,9 @@ export const Input: FC<InputProps> = ({
         >
           {helperText}
         </div>
+      )}
+      {hookFormName && (
+        <InputErrors errors={methods?.formState.errors[hookFormName]?.types} />
       )}
     </div>
   );

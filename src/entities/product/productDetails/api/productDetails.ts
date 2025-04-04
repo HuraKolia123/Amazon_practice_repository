@@ -1,8 +1,10 @@
+//api
 import { rapidAPI } from "@/shared/api";
+// query types
 import {
   GetDetailsOfProductsRequest,
   GetDetailsOfProductsResponse,
-} from "../model/datailsAPI";
+} from "../model/detailsAPI";
 
 const productDetails = rapidAPI.injectEndpoints({
   endpoints: (builder) => ({

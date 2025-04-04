@@ -6,11 +6,13 @@ import styles from "./FilterSectionItem.module.scss";
 interface FilterSectionItemProps {
   sectionItemName: string;
   selectSectionItem: (item: string) => void;
+  isSelected: boolean;
 }
 
 export const FilterSectionItem: FC<FilterSectionItemProps> = ({
   selectSectionItem,
   sectionItemName,
+  isSelected,
 }) => {
   const onChangeSectionItemClick = () => {
     selectSectionItem(sectionItemName);
@@ -18,7 +20,9 @@ export const FilterSectionItem: FC<FilterSectionItemProps> = ({
 
   return (
     <div
-      className={styles.FilterSectionItem}
+      className={`${styles.FilterSectionItem} ${
+        isSelected ? styles.selected : ""
+      }`}
       onClick={onChangeSectionItemClick}
     >
       {sectionItemName}

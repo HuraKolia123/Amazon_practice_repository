@@ -8,11 +8,13 @@ import styles from "./FilterSectionItemList.module.scss";
 interface FilterSectionItemListProps {
   sectionItems: string[];
   selectSectionItem: (item: string) => void;
+  selectedSectionItem: string;
 }
 
 export const FilterSectionItemList: FC<FilterSectionItemListProps> = ({
   selectSectionItem,
   sectionItems,
+  selectedSectionItem,
 }) => {
   return (
     <div className={styles.FilterSectionItemList}>
@@ -22,6 +24,7 @@ export const FilterSectionItemList: FC<FilterSectionItemListProps> = ({
             sectionItemName={item}
             key={item}
             selectSectionItem={selectSectionItem}
+            isSelected={selectedSectionItem === item}
           />
         );
       })}

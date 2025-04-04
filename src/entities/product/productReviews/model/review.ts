@@ -1,15 +1,17 @@
-export interface IReview {
-  reviewId: string;
-  reviewTitle: string;
-  reviewComment: string;
-  reviewStarRating: string; // Зберігається як текст, але можна змінити на number, якщо завжди буде числове значення.
-  reviewLink: string;
-  reviewAuthor: string;
-  reviewAuthorAvatar: string;
-  reviewImages?: string[]; // Може бути порожнім, тому тип необов'язковий.
-  reviewVideo?: string | null; // Відео може бути null або undefined.
-  reviewDate: string;
-  isVerifiedPurchase: boolean;
-  helpfulVoteStatement?: string; // Не обов'язкове, якщо може бути відсутнім.
-  reviewedProductAsin: string;
+export interface IProductReview {
+  review_id: string;
+  review_title: string;
+  review_comment: string;
+  review_star_rating: string;
+  review_link: string;
+  review_author_id: string;
+  review_author: string;
+  review_author_url: string;
+  review_author_avatar?: string;
+  review_images: string[];
+  review_video: null;
+  review_date: string;
+  is_verified_purchase: boolean;
+  helpful_vote_statement: string;
+  reviewed_product_asin: string;
 }

@@ -1,0 +1,53 @@
+.modalContent {
+  display: flex;
+  justify-content: center;
+}
+
+.modalMainImage {
+  object-fit: contain;
+  max-width: 705px;
+  max-height: 510px;
+  width: 100%;
+  height: 100%;
+  cursor: zoom-in;
+  transition: transform 0.3s ease-in-out;
+}
+
+.zoomed {
+  transform: scale(1.4); // або інше значення
+}
+.rightModalSide {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modalText {
+  font-size: 17px;
+  font-family: verdana, arial, helvetica, sans-serif;
+}
+.modalAdditionaImages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.modalAdditionalImage {
+  object-fit: contain;
+  width: 50px;
+  height: 50px;
+  border: 2px transparent solid;
+  cursor: pointer;
+
+  &:hover {
+    border-color: #22629f;
+  }
+}
+
+.selected {
+  object-fit: contain;
+  width: 50px;
+  height: 50px;
+  border: 3px #f59e19 solid;
+  cursor: pointer;
+}

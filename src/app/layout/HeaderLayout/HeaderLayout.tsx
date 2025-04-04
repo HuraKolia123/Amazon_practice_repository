@@ -4,6 +4,8 @@ import { FC } from "react";
 import { Outlet } from "react-router-dom";
 //ui
 import { Header } from "@/widgets/header/ui/Header/Header";
+// styles
+import styles from "./HeaderLayout.module.scss";
 
 interface HeaderLayoutProps {}
 
@@ -11,7 +13,9 @@ export const HeaderLayout: FC<HeaderLayoutProps> = ({}) => {
   return (
     <>
       <Header />
-      <Outlet />
+      <div className={styles.page}>
+        <Outlet />
+      </div>
     </>
   );
 };

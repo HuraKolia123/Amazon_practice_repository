@@ -1,5 +1,8 @@
 export const routeConfig = {
   home: "/",
   products: "/search",
-  singleProduct: `/product-details/:asin`,
+  productDetails: `/product-details/:asin`,
+  signIn: "/sign-in",
+  signUp: "/sign-up",
+  basket: "/basket",
 };

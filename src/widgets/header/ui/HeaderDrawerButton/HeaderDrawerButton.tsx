@@ -1,10 +1,11 @@
 // react
 import { FC, useState } from "react";
+//ui
+import { HeaderDrawer } from "../HeaderDrawer";
 //assets
-import BurgerIcon from "../../libs/assets/svg/openModalWindow.svg?react";
+import BurgerIcon from "@/shared/libs/assets/svg/openModalWindow.svg?react";
 // styles
 import styles from "./HeaderDrawerButton.module.scss";
-import { HeaderDrawer } from "../HeaderDrawer/HeaderDrawer";
 
 interface HeaderDrawerButtonProps {}
 

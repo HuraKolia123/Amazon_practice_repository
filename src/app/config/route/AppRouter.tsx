@@ -7,12 +7,20 @@ import { HomePage } from "@/pages/home/ui/HomePage/HomePage";
 import { ProductSearchPage } from "@/pages/search";
 // constants
 import {
+  getBasketRoute,
   getHomeRoute,
   getProductsRoute,
+  getSignInPageRoute,
+  getSignUpPageRoute,
   getSingleProductRoute,
 } from "@/shared/libs/constants/routes";
 import { HeaderLayout } from "@/app/layout/HeaderLayout/HeaderLayout";
 import { ProductDetailsPage } from "@/pages/product-details/ui/ProductDetailsPage/ProductDetailsPage";
+import { SignInPage } from "@/pages/signIn";
+import { SignUpPage } from "@/pages/signUp";
+import { AuthRequired } from "./routeGuards/AuthRequired";
+import { GuestGuard } from "./routeGuards/GuestGuard";
+import { BasketForUnregistered } from "@/pages/basket/ui/BasketForUnregistered";
 
 interface AppRouterProps {}
 
@@ -22,10 +30,17 @@ export const AppRouter: FC<AppRouterProps> = ({}) => {
       <Route element={<HeaderLayout />}>
         <Route path={getHomeRoute()} element={<HomePage />} />
         <Route path={getProductsRoute()} element={<ProductSearchPage />} />
-        <Route
-          path={getSingleProductRoute(":asin")}
-          element={<ProductDetailsPage />}
-        />
+        <Route element={<AuthRequired />}>
+          <Route
+            path={getSingleProductRoute(":asin")}
+            element={<ProductDetailsPage />}
+          />
+        </Route>
+        <Route path={getBasketRoute()} element={<BasketForUnregistered />} />
+        <Route element={<GuestGuard />}>
+          <Route element={<SignInPage />} path={getSignInPageRoute()}></Route>
+          <Route element={<SignUpPage />} path={getSignUpPageRoute()}></Route>
+        </Route>
       </Route>
     </Routes>
   );

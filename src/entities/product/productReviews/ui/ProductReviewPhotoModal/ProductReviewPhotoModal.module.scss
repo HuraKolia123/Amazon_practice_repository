@@ -1,0 +1,74 @@
+.reviewImages {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.reviewImage {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  display: flex;
+  max-width: 1033px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  overflow-x: hidden;
+}
+
+.modalImage {
+  max-width: 600px;
+  width: 100%;
+  max-height: 600px;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: contain;
+  filter: contrast(110%) brightness(105%);
+  border-radius: 4px;
+}
+
+.closeButton {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  border: 2px solid transparent;
+  background: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+
+  &:hover {
+    border: 2px solid #2f608c;
+    border-radius: 6px;
+  }
+}

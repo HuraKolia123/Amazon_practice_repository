@@ -1,0 +1,1 @@
+export { ProductDetailsCustomVideosLowerSide } from "./ProductDetailsCustomVideosLowerSide";

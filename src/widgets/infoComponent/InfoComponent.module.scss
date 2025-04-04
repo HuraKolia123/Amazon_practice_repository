@@ -1,0 +1,47 @@
+.InfoComponent {
+  font-family: "Amazon Ember", Arial, sans-serif;
+  height: 50px;
+  // width: 100%;
+  max-width: 140px;
+  min-width: 78px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  padding-left: 3px;
+  color: white;
+  position: relative;
+  &:hover {
+    border-color: white;
+  }
+}
+
+.topText {
+  width: 100%;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.bottomTextAndIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottomText {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  // width: 16px;
+  // height: 16px;
+  svg {
+    fill: gray;
+  }
+}

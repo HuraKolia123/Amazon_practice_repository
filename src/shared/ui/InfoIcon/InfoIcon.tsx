@@ -1,8 +1,7 @@
 // react
 import { FC, useState } from "react";
-
 //assets
-import LabelIconInfo from "@/shared/libs/svg/infoIcon.svg?react";
+import LabelIconInfo from "@/shared/libs/assets/svg/infoIcon.svg?react";
 // styles
 import styles from "./InfoIcon.module.scss";
 

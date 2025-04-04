@@ -1,0 +1,9 @@
+.videos {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-grow: 1;
+  justify-content: center;
+  max-width: calc(290px * 4.5 + 40px); /* 3 відео + відступи */
+  overflow: hidden;
+}

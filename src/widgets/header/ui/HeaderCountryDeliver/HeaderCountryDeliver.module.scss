@@ -1,0 +1,33 @@
+.HeaderCountryDeliver {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-family: "Amazon Ember", Arial, sans-serif;
+  padding: 0px 9px 0px 9px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+
+  &:hover {
+    border-color: white;
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+.deliverTo {
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 14px;
+}
+.country {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 15px;
+}

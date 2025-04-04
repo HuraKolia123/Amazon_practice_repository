@@ -1,12 +1,13 @@
 // react
 import { FC } from "react";
-// styles
-import styles from "./ProductDetailsQuery.module.scss";
-import { useGetProductDetailsQuery } from "@/entities/product/productDetails/api/productDetails";
+//router-dom
+import { useParams } from "react-router-dom";
+//query
+import { useGetProductDetailsQuery } from "@/entities/product/productDetails";
+//ui
 import { Loader } from "@/shared/ui/Loader";
 import { ErrorComponent } from "@/shared/ui/Error/ErrorComponent";
 import { ProductDetailsItem } from "@/entities/product/productDetails/ui/ProductDetailsItem/ProductDetailsItem";
-import { useParams } from "react-router-dom";
 
 interface ProductDetailsQueryProps {}
 
@@ -25,9 +26,5 @@ export const ProductDetailsQuery: FC<ProductDetailsQueryProps> = ({}) => {
     return <ErrorComponent />;
   }
 
-  return (
-    <div className={styles.ProductDetailsQuery}>
-      <ProductDetailsItem {...data?.data} />
-    </div>
-  );
+  return <ProductDetailsItem {...data?.data} />;
 };

@@ -1,28 +1,27 @@
 // react
-import { ChangeEvent, FC, useState } from "react";
+import React, { ChangeEvent, FC, useState } from "react";
 //redax
 import { useSelector } from "react-redux";
 import { CleverSearchSelectCategory } from "../CleverSearchSelectCategory/CleverSearchSelectCategory";
 //debouncoing
 import { useDebounce } from "../../../../shared/libs/hooks/useDebounce";
 //react-router
-import { useNavigate } from "react-router";
+import { useNavigate, useSearchParams } from "react-router";
 //query
 import { useGetProductSearchItemsQuery } from "@/entities/product/productSearch";
 import { useGetCategoryItemsQuery } from "@/entities/utility/productCategoryList";
 //constants
 import { getProductsRoute } from "@/shared/libs/constants/routes";
 import { buildUrlWithSearchParams } from "@/shared/libs/utils/buildUrlWithSearchParams";
-//assets
-import SearchIcon from "../../assets/svg/searchIcon.svg?react";
 //ui
-import { DropDown } from "@/shared/ui/dropDown";
 import { CleverSearchContent } from "../CleverSearchContent";
 import { Input } from "@/shared/ui/Input";
-
+import { DropDown } from "@/shared/ui/DropDown";
+//assets
+import SearchIcon from "@/shared/libs/assets/svg/searchIcon.svg?react";
 // styles
 import styles from "./CleverSearch.module.scss";
-import { getProductPageState } from "@/pages/search/model/selectors";
+import { getCategoryId } from "@/pages/search/model/selectors/productPageSelectors";
 
 interface CleverSearchProps {
   searchQuery?: string;
@@ -30,15 +29,10 @@ interface CleverSearchProps {
 
 export const CleverSearch: FC<CleverSearchProps> = ({ searchQuery }) => {
   const navigate = useNavigate();
-  const {
-    category_id,
-    deals_and_discounts,
-    max_price,
-    min_price,
-    page,
-    product_condition,
-    sort_by,
-  } = useSelector(getProductPageState);
+
+  const [_, setSearchParams] = useSearchParams();
+
+  const category_id = useSelector(getCategoryId);
 
   const [text, setText] = useState(searchQuery || "");
 
@@ -48,37 +42,38 @@ export const CleverSearch: FC<CleverSearchProps> = ({ searchQuery }) => {
 
   const isSubmitDisabled = debouncedText.length < 3;
 
+  // Перевіряємо, чи ми на сторінці пошуку
+  const isOnSearchPage = location.pathname.startsWith(getProductsRoute());
+
+  console.log(isOnSearchPage);
+
   const {
     isFetching: isFetchingCategories,
     isLoading: isLoadingCategories,
     data: categoriesData,
+    isError: isCategoriesError,
   } = useGetCategoryItemsQuery(
     {
       country: "US",
     },
     {
-      skip: isSubmitDisabled,
+      skip: isSubmitDisabled || isOnSearchPage,
     }
   );
+  // Відключаємо запити, якщо вже на сторінці пошуку
 
   const {
     isFetching: isFetchingProducts,
     isLoading: isLoadingProducts,
     data: productsData,
+    isError: isProductError,
   } = useGetProductSearchItemsQuery(
     {
-      country: "US",
-      page: page,
-      query: debouncedText,
       category_id: category_id,
-      deals_and_discounts: deals_and_discounts,
-      max_price: max_price,
-      min_price: min_price,
-      product_condition: product_condition,
-      sort_by: sort_by,
+      query: debouncedText,
     },
     {
-      skip: isSubmitDisabled,
+      skip: isSubmitDisabled || isOnSearchPage,
     }
   );
 
@@ -96,22 +91,38 @@ export const CleverSearch: FC<CleverSearchProps> = ({ searchQuery }) => {
   };
 
   const onBlurChange = () => {
-    setIsFocused(false);
+    setTimeout(() => {
+      setIsFocused(false);
+    }, 100);
   };
 
-  const isResultLoading =
-    isLoadingCategories ||
-    isFetchingCategories ||
-    isLoadingProducts ||
-    isFetchingProducts;
-
-  const isEnterPicked = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (e.key === "Enter" && !isSubmitDisabled) {
+  const searchProductsHandler = () => {
+    if (!isOnSearchPage) {
       navigate(
         buildUrlWithSearchParams(getProductsRoute(), {
           query: debouncedText,
         })
       );
+    }
+
+    if (isOnSearchPage) {
+      setSearchParams((prev) => ({ ...prev, query: text }));
+    }
+  };
+
+  const isEnterPicked = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "Enter" && !isSubmitDisabled) {
+      e.currentTarget.blur();
+      searchProductsHandler();
+      setIsFocused(false);
+    }
+  };
+
+  const onRightSearchButtonClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!isSubmitDisabled) {
+      e.currentTarget.blur();
+      searchProductsHandler();
+      setIsFocused(false);
     }
   };
 
@@ -119,14 +130,23 @@ export const CleverSearch: FC<CleverSearchProps> = ({ searchQuery }) => {
     return item.name.includes(text);
   });
 
+  const isResultLoading =
+    isLoadingCategories ||
+    isFetchingCategories ||
+    isLoadingProducts ||
+    isFetchingProducts;
+
+  const isResultError = isCategoriesError || isProductError;
+
   return (
     <DropDown
       maxWidth="100%"
-      isOpen={isFocused && !isSubmitDisabled}
+      isOpen={isFocused && !isSubmitDisabled && !isOnSearchPage} // Не відкриваємо на сторінці пошуку
       dropDownContent={
         <CleverSearchContent
           onCategoryClick={() => {}}
           isLoading={isResultLoading}
+          isError={isResultError}
           categoriesData={filteredCategories || []}
           productsData={productsData?.data.products || []}
         />
@@ -140,9 +160,13 @@ export const CleverSearch: FC<CleverSearchProps> = ({ searchQuery }) => {
         onKeyDown={isEnterPicked}
         placeholder="Search Amazon"
         backgroundColor="white"
+        inputSize="medium"
         leftIcon={<CleverSearchSelectCategory />}
         rightIcon={
-          <div className={styles.rightSearchButton}>
+          <div
+            className={styles.rightSearchButton}
+            onClick={onRightSearchButtonClick}
+          >
             <SearchIcon />
           </div>
         }

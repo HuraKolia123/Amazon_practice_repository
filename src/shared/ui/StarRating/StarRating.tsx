@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Star } from "../Star/Star";
+import { Star } from "../Star";
 
 interface StarRatingProps {
   rating: number;

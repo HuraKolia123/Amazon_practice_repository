@@ -5,7 +5,7 @@ import { FC } from "react";
 // import { useGetCategoryItemsQuery } from "@/entities/utility/productCategoryList";
 //ui
 // import { ProductCategoryQuery } from "@/pages/search/ui/ProductCategoryQuery";
-import { Drawer } from "@/widgets/drawer_/ui/Drawer/Drawer";
+import { Drawer } from "@/widgets/drawer/ui/Drawer/Drawer";
 // import { Loader } from "@/shared/ui/Loader";
 // styles
 import styles from "./HeaderDrawer.module.scss";
@@ -34,7 +34,7 @@ export const HeaderDrawer: FC<HeaderDrawerProps> = ({ isOpen, onClose }) => {
 
   return (
     <Drawer isOpen={isOpen} onClose={onClose}>
-      <HeaderDrawerTopSide />
+      <HeaderDrawerTopSide onClose={onClose} />
       <div className={styles.bottomDrawerSide}>
         {mokCategoriesData.map((item) => {
           return (
@@ -51,22 +51,3 @@ export const HeaderDrawer: FC<HeaderDrawerProps> = ({ isOpen, onClose }) => {
     </Drawer>
   );
 };
-
-// const { isFetching, isLoading, error } = useGetCategoryItemsQuery(
-//   {
-//     country: "US",
-//   },
-//   { skip: !isOpen }
-// );
-
-// const getDrawerContent = () => {
-//   if (isLoading || isFetching) {
-//     return <Loader className={styles.categoryLoader} />;
-//   }
-
-//   if (error) {
-//     return <ErrorComponent className={styles.errorCategory} />;
-//   }
-
-//   return <ProductCategoryQuery />;
-// };
