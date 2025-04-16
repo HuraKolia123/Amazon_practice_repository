@@ -1,29 +1,39 @@
 // react
 import { FC } from "react";
-//redux
-import { useDispatch, useSelector } from "react-redux";
-import { getProductCondition } from "../../model/selectors";
-import { productPageActions } from "../../model/slice";
+import styles from "./ProductConditionComponent.module.scss";
 //types
 import { ProductConditionType } from "@/shared/libs/types/product_condition";
+import { isConditionByType } from "@/shared/libs/helpers/typeGuards/isProductConditionsByType";
 //ui
 import { FilterSection } from "@/widgets/filterSection";
 //constants
 import { conditionsArray } from "../../libs/constants";
 // styles
-import styles from "./ProductConditionComponent.module.scss";
+import { useSearchParams } from "react-router-dom";
+import { SEARCH_PARAM_KEYS } from "@/shared/libs/constants/searchParams";
 
 interface ProductConditionComponentProps {}
 
 export const ProductConditionComponent: FC<
   ProductConditionComponentProps
 > = ({}) => {
-  const selectedCondition = useSelector(getProductCondition);
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  const dispatch = useDispatch();
+  const conditionQuery = searchParams.get(
+    SEARCH_PARAM_KEYS.PRODUCT_CONDITION
+  ) as ProductConditionType;
+
+  const selectedCondition: ProductConditionType = isConditionByType(
+    conditionQuery
+  )
+    ? conditionQuery
+    : "ALL";
 
   const onConditionChange = (condition: ProductConditionType) => {
-    dispatch(productPageActions.setConditions(condition));
+    setSearchParams((prev) => {
+      prev.set(SEARCH_PARAM_KEYS.PRODUCT_CONDITION, condition);
+      return prev;
+    });
   };
 
   return (

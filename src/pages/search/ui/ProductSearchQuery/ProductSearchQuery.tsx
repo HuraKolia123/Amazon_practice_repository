@@ -1,55 +1,51 @@
 // react
 import { FC, useEffect } from "react";
-//redux
-import { useDispatch, useSelector } from "react-redux";
-import { getProductPageState } from "../../model/selectors";
-import { productPageActions } from "../../model/slice";
+
 //ui
 import { ProductPagination } from "../ProductPagination";
 import { ErrorComponent } from "@/shared/ui/Error/ErrorComponent";
 import { Loader } from "@/shared/ui/Loader";
+//queryParams
+import { useSearchProductParams } from "../../libs/hooks/useSearchProductParams";
 // entities
 import { ProductItemList } from "@/entities/product/productSearch";
 //types
 import { useGetProductSearchItemsQuery } from "@/entities/product/productSearch";
 // styles
 import styles from "./ProductSearchQuery.module.scss";
+import { useSearchParams } from "react-router-dom";
+import { SEARCH_PARAM_KEYS } from "@/shared/libs/constants/searchParams";
 
-interface ProductSearchQueryProps {
-  searchQuery?: string;
-}
+interface ProductSearchQueryProps {}
 
-export const ProductSearchQuery: FC<ProductSearchQueryProps> = ({
-  searchQuery,
-}) => {
-  const dispatch = useDispatch();
+export const ProductSearchQuery: FC<ProductSearchQueryProps> = ({}) => {
+  const searchParams = useSearchProductParams();
 
-  const {
-    page,
-    sort_by,
-    product_condition,
-    deals_and_discounts,
-    category_id,
-    max_price,
-    min_price,
-  } = useSelector(getProductPageState);
+  const [_, setSearchParams] = useSearchParams();
 
   const { isFetching, data, isLoading, isError } =
     useGetProductSearchItemsQuery({
       country: "",
-      page: page,
-      query: searchQuery || "",
-      sort_by: sort_by,
-      product_condition: product_condition,
-      deals_and_discounts: deals_and_discounts,
-      category_id: category_id,
-      min_price: min_price,
-      max_price: max_price,
+      category_id: searchParams.category_id || "",
+      deals_and_discounts: searchParams.deals_and_discounts,
+      min_price: searchParams.min_price,
+      max_price: searchParams.max_price,
+      page: searchParams.page,
+      product_condition: searchParams.product_condition,
+      query: searchParams.query,
+      sort_by: searchParams.sort_by,
     });
 
   useEffect(() => {
     if (data?.data?.total_products) {
-      dispatch(productPageActions.setTotalProducts(data?.data?.total_products));
+      setSearchParams((prev) => {
+        prev.set(
+          SEARCH_PARAM_KEYS.TOTAL_PRODUCTS,
+          String(data.data.total_products)
+        );
+
+        return prev;
+      });
     }
   }, [data]);
 
@@ -80,7 +76,10 @@ export const ProductSearchQuery: FC<ProductSearchQueryProps> = ({
       ) : (
         <div className={styles.ProductSearchList}>
           <ProductItemList products={data?.data.products || []} />
-          <ProductPagination currentPage={page} pagesCount={totalPages} />
+          <ProductPagination
+            currentPage={Number(searchParams.page)}
+            pagesCount={totalPages}
+          />
         </div>
       )}
     </>

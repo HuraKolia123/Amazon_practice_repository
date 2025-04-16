@@ -10,7 +10,6 @@ import { FC } from "react";
 import { ProductCategoryItemList } from "@/entities/utility/productCategoryList";
 // styles
 import styles from "./ProductCategoryQuery.module.scss";
-// import { Loader } from "@/shared/ui/Loader";
 
 import { mokCategoriesData } from "../../libs/constants/mokCategoriesData";
 

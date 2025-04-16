@@ -22,6 +22,7 @@ import SearchIcon from "@/shared/libs/assets/svg/searchIcon.svg?react";
 // styles
 import styles from "./CleverSearch.module.scss";
 import { getCategoryId } from "@/pages/search/model/selectors/productPageSelectors";
+import { SEARCH_PARAM_KEYS } from "@/shared/libs/constants/searchParams";
 
 interface CleverSearchProps {
   searchQuery?: string;
@@ -42,10 +43,7 @@ export const CleverSearch: FC<CleverSearchProps> = ({ searchQuery }) => {
 
   const isSubmitDisabled = debouncedText.length < 3;
 
-  // Перевіряємо, чи ми на сторінці пошуку
   const isOnSearchPage = location.pathname.startsWith(getProductsRoute());
-
-  console.log(isOnSearchPage);
 
   const {
     isFetching: isFetchingCategories,
@@ -60,7 +58,6 @@ export const CleverSearch: FC<CleverSearchProps> = ({ searchQuery }) => {
       skip: isSubmitDisabled || isOnSearchPage,
     }
   );
-  // Відключаємо запити, якщо вже на сторінці пошуку
 
   const {
     isFetching: isFetchingProducts,
@@ -106,7 +103,10 @@ export const CleverSearch: FC<CleverSearchProps> = ({ searchQuery }) => {
     }
 
     if (isOnSearchPage) {
-      setSearchParams((prev) => ({ ...prev, query: text }));
+      setSearchParams((prev) => {
+        prev.set(SEARCH_PARAM_KEYS.QUERY, text);
+        return prev;
+      });
     }
   };
 

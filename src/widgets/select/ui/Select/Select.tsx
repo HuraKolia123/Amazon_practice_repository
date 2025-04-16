@@ -2,10 +2,12 @@
 import styles from "./Select.module.scss";
 //react
 import { FC, useRef, useState } from "react";
+// hooks
+import { useClickOutside } from "@/shared/libs/hooks/useClickOutside";
+// assets
+import DropDown from "../../libs/assets/svg/DropDown.svg?react";
 //ui
 import { OptionList } from "../OptionList/OptionList";
-import DropDown from "../libs/assets/svg/DropDown.svg?react";
-import { useClickOutside } from "@/shared/libs/hooks/useClickOutside";
 
 interface SelectProps {
   options: string[];
@@ -22,11 +24,11 @@ export const Select: FC<SelectProps> = ({
 
   const selectRef = useRef<HTMLDivElement>(null);
 
-  const handleIsSelectOpenToggle = () => {
+  const onIsSelectOpenToggle = () => {
     setIsSelectOpen(!isSelectOpen);
   };
 
-  useClickOutside(selectRef, handleIsSelectOpenToggle);
+  useClickOutside(selectRef, () => setIsSelectOpen(false));
 
   const onSelectOption = (option: string) => {
     setSelectedOption(option);
@@ -35,8 +37,10 @@ export const Select: FC<SelectProps> = ({
 
   return (
     <div ref={selectRef} className={styles.container}>
-      <div className={styles.Select} onClick={handleIsSelectOpenToggle}>
-        <div className={styles.defaultValue}>Sort by: {selectedOption}</div>
+      <div className={styles.Select} onClick={onIsSelectOpenToggle}>
+        <div className={styles.defaultValue}>
+          Sort by: {!selectedOption ? "Relevance" : selectedOption}
+        </div>
         <div className={styles.icon}>
           <DropDown />
         </div>

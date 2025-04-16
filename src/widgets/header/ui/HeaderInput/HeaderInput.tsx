@@ -7,6 +7,7 @@ import styles from "./HeaderInput.module.scss";
 import { HeaderSelect } from "@/widgets/headerCleverSearch/ui/HeaderSelect/HeaderSelect";
 import { IProductCategoryItem } from "@/entities/utility/productCategoryList/model/types/productCategoryList";
 import { mokCategoriesData } from "@/pages/search/libs/constants/mokCategoriesData";
+// import { useSearchParams } from "react-router-dom";
 
 interface HeaderInputProps {
   value: string;
@@ -17,6 +18,8 @@ export const HeaderInput: FC<HeaderInputProps> = ({ onChange, value }) => {
   const [selectedOption, setSelectedOption] = useState<IProductCategoryItem>(
     mokCategoriesData[0]
   );
+  // const [searchParams, setSearchParams] = useSearchParams();
+
   return (
     <div className={styles.HeaderInput}>
       <HeaderSelect

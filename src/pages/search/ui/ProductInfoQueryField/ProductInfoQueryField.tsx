@@ -1,19 +1,22 @@
 // react
 import { FC } from "react";
+//constants
+import { SEARCH_PARAM_KEYS } from "@/shared/libs/constants/searchParams";
+//react-router-dom
+import { useSearchParams } from "react-router-dom";
+//ui
+import { ProductSortComponent } from "../ProductSortComponent";
 // styles
 import styles from "./ProductInfoQueryField.module.scss";
-import { ProductSortComponent } from "../ProductSortComponent";
-import { useSelector } from "react-redux";
-import { getTotalProducts } from "../../model/selectors";
 
-interface ProductInfoQueryFieldProps {
-  searchQuery: string;
-}
+interface ProductInfoQueryFieldProps {}
 
-export const ProductInfoQueryField: FC<ProductInfoQueryFieldProps> = ({
-  searchQuery,
-}) => {
-  const total_products = useSelector(getTotalProducts);
+export const ProductInfoQueryField: FC<ProductInfoQueryFieldProps> = ({}) => {
+  const [searchParams] = useSearchParams();
+
+  const searchQuery = searchParams.get(SEARCH_PARAM_KEYS.QUERY) || "";
+
+  const total_products = searchParams.get(SEARCH_PARAM_KEYS.TOTAL_PRODUCTS);
 
   return (
     <div className={styles.ProductInfoQueryField}>

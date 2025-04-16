@@ -14,7 +14,9 @@ const productSearchAPI = rapidAPI.injectEndpoints({
       GetProductSearchItemRequest
     >({
       query: (data) => ({
-        url: buildUrlWithSearchParams("/search", { ...data }),
+        url: buildUrlWithSearchParams("/search", {
+          ...data,
+        } as GetProductSearchItemRequest),
         method: "GET",
       }),
     }),
