@@ -20,7 +20,7 @@ export const ProductDealsAndDiscounts: FC<
   const [searchParams, setSearchParams] = useSearchParams();
 
   const dealsAndDiscQuery = searchParams.get(
-    "deals_and_discounts"
+    SEARCH_PARAM_KEYS.DEALS_AND_DISCOUNTS
   ) as ProductDealsAndDiscountsType;
 
   const selectedDeals: ProductDealsAndDiscountsType = isDealsAndDiscountsByType(

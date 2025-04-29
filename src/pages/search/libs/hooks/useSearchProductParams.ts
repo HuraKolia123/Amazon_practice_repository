@@ -1,9 +1,9 @@
 import { ProductDealsAndDiscountsType } from "@/shared/libs/types/deals_and_discounts";
 import { ProductConditionType } from "@/shared/libs/types/product_condition";
 import { SortByType } from "@/shared/libs/types/sortBy";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParamsHelperHook } from "./useSearchParamsHelperHook";
 
-interface SearchParams {
+interface SearchProductParams {
   category_id?: string;
   deals_and_discounts?: ProductDealsAndDiscountsType;
   max_price?: number;
@@ -13,15 +13,8 @@ interface SearchParams {
   query: string;
   sort_by?: SortByType;
 }
-export const useSearchProductParams = (): SearchParams => {
-  const [searchParams] = useSearchParams();
-
-  const getParam = <T>(key: string) => searchParams.get(key) as T;
-
-  const getNumberParam = (key: string) => {
-    const value = searchParams.get(key);
-    return value !== null && !isNaN(Number(value)) ? Number(value) : undefined;
-  };
+export const useSearchProductParams = (): SearchProductParams => {
+  const { getNumberParam, getParam } = useSearchParamsHelperHook();
 
   return {
     page: getNumberParam("page") || 1,

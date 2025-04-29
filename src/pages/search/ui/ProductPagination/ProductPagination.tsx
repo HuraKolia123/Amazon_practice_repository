@@ -1,31 +1,29 @@
 // react
 import { FC } from "react";
-//redux
-import { useDispatch } from "react-redux";
-import { productPageActions } from "../../model/slice";
 //ui
 import { PaginationButtons } from "@/widgets/paginationButtons";
-// styles
-import styles from "./ProductPagination.module.scss";
+import { SEARCH_PARAM_KEYS } from "@/shared/libs/constants/searchParams";
+import { useSingleSearchParam } from "../../libs/hooks/useSingleSearchParam";
+import { setSearchParams } from "@/shared/libs/helpers/setSearchParams";
 
 interface ProductPaginationProps {
-  currentPage: number;
   pagesCount: number;
 }
 
 export const ProductPagination: FC<ProductPaginationProps> = ({
-  currentPage,
   pagesCount,
 }) => {
-  const dispatch = useDispatch();
+  const currentPage = useSingleSearchParam(SEARCH_PARAM_KEYS.PAGE);
 
   const onCurrentPageChange = (value: number) => {
-    dispatch(productPageActions.setPage(value));
+    setSearchParams({
+      [SEARCH_PARAM_KEYS.PAGE]: value,
+    });
   };
 
   return (
     <PaginationButtons
-      currentPage={currentPage}
+      currentPage={Number(currentPage)}
       pagesCount={pagesCount}
       setCurrentPage={onCurrentPageChange}
     />

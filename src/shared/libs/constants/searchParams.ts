@@ -7,4 +7,5 @@ export const SEARCH_PARAM_KEYS = {
   MIN_PRICE: "min_price",
   MAX_PRICE: "max_price",
   SORT_BY: "sort_by",
+  PAGE: "page",
 } as const;

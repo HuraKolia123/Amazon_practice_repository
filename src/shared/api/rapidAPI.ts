@@ -8,7 +8,7 @@ export const rapidAPI = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: RAPID_BASE_URL,
     headers: {
-      "x-rapidapi-key": "c5ce8dfb7bmshd811fff980390cdp14ac02jsn7de4f37c0dfc",
+      "x-rapidapi-key": "6abd275a1cmshddb7e78e901ef72p180a97jsnf4a08e99b438",
       "x-rapidapi-host": "real-time-amazon-data.p.rapidapi.com",
     },
   }),
@@ -22,6 +22,6 @@ export const rapidAPI = createApi({
 
 // 2) 4adbe08f58mshdfaa3c7645c0e12p17fb68jsn9bf6a7918301 - на момент 4.04 не працював
 
-// 3) c5ce8dfb7bmshd811fff980390cdp14ac02jsn7de4f37c0dfc - зараз
+// 3) c5ce8dfb7bmshd811fff980390cdp14ac02jsn7de4f37c0dfc - змінив 18.04
 
-// 4) 6abd275a1cmshddb7e78e901ef72p180a97jsnf4a08e99b438 - не працює (16.03)
+// 4) 6abd275a1cmshddb7e78e901ef72p180a97jsnf4a08e99b438 - зараз (18.04)
