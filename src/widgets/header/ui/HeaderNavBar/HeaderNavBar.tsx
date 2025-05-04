@@ -4,9 +4,9 @@ import { FC } from "react";
 import { HeaderNavLink } from "../HeaderNavLink";
 import { HeaderDrawerButton } from "../HeaderDrawerButton/HeaderDrawerButton";
 //constants
-import { headerNavBarConfig } from "../../libs/constants/headerNavbarConfig";
 // styles
 import styles from "./HeaderNavBar.module.scss";
+import { headerNavBarConfig } from "@/shared/libs/constants/HeaderNavbarConfig";
 
 interface HeaderNavBarProps {}
 
