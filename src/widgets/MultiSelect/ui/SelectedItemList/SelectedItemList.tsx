@@ -2,11 +2,11 @@
 import { FC } from "react";
 // styles
 import styles from "./SelectedItemList.module.scss";
-import { ISeleectedItem } from "../../model/selectedItem";
+import { ISelectedItem } from "../../model/selectedItem";
 import { SelectedItem } from "../SelectedItem/SelectedItem";
 
 interface SelectedItemListProps {
-  selectedItems: ISeleectedItem[];
+  selectedItems: ISelectedItem[];
 }
 
 export const SelectedItemList: FC<SelectedItemListProps> = ({

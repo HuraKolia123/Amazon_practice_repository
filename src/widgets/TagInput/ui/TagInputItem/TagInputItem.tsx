@@ -10,7 +10,7 @@ interface TagInputItemProps extends ITag {
   tags: ITag[];
 }
 
-export const TagInputItem: FC<TagInputItemProps> = ({ text, tags }) => {
+export const TagInputItem: FC<TagInputItemProps> = ({ text }) => {
   return (
     <div className={styles.TagInputItem}>
       {text}

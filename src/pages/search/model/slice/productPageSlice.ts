@@ -5,7 +5,7 @@ const initialState: ProductPageStateSchema = {
   page: 1,
   sort_by: "",
   product_condition: "ALL",
-  deals_and_discounts: "",
+  deals_and_discounts: "NONE",
   min_price: 1,
   max_price: 500000,
   category_id: "",

@@ -1,9 +1,9 @@
 // react
 import { FC } from "react";
-// styles
-import styles from "./TagInputItemList.module.scss";
-import { TagInputItem } from "../TagInputItem/TagInputItem";
+//types
 import { ITag } from "../../model/types/types";
+//ui
+import { TagInputItem } from "../TagInputItem/TagInputItem";
 
 interface TagInputItemListProps {
   tags: ITag[];

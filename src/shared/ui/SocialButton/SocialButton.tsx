@@ -1,5 +1,5 @@
 // react
-import { FC, ReactNode, useState } from "react";
+import { FC } from "react";
 // styles
 import styles from "./SocialButton.module.scss";
 //assets

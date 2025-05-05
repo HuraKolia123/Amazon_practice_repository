@@ -77,6 +77,7 @@ export const ProductSearchQuery: FC<ProductSearchQueryProps> = ({}) => {
         <div className={styles.ProductSearchList}>
           <ProductItemList products={data?.data.products || []} />
           <ProductPagination
+            //@ts-ignore
             currentPage={Number(searchParams.page)}
             pagesCount={totalPages}
           />

@@ -7,12 +7,14 @@ import {
   ReactNode,
   useState,
 } from "react";
+//libraries
+import { useFormContext } from "react-hook-form";
+import clsx from "clsx";
+//ui
+import { InfoIcon } from "../InfoIcon/InfoIcon";
+import { InputErrors } from "../InputErrors/InputErrors";
 // styles
 import styles from "./Input.module.scss";
-import clsx from "clsx";
-import { InfoIcon } from "../InfoIcon/InfoIcon";
-import { useFormContext } from "react-hook-form";
-import { InputErrors } from "../InputErrors/InputErrors";
 
 interface InputProps {
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;

@@ -1,15 +1,17 @@
+//react
 import { FC, ReactNode } from "react";
+// libraries
 import { FormProvider, useForm, UseFormProps } from "react-hook-form";
 import { ZodSchema } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+//types
+import { FormField } from "@/shared/libs/types/formField";
+//ui
 import { Button } from "@/shared/ui/Button";
 import { Input } from "@/shared/ui/Input";
+//styles
 import styles from "./Form.module.scss";
-import { FormField } from "@/shared/libs/types/formField";
 
-// Тип для конфігурації поля форми
-
-// Пропси для компонента Form
 interface FormProps<T> {
   fields: FormField[]; // Масив полів форми
   schema: ZodSchema<T>; // Схема валідації Zod

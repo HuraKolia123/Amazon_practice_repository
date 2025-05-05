@@ -2,7 +2,7 @@
 import { Link as ReactRouterLink } from "react-router-dom";
 import { FC } from "react";
 // libs
-import classnames from "classnames";
+import clsx from "clsx";
 // styles
 import styles from "./Link.module.scss";
 
@@ -22,7 +22,7 @@ export const Link: FC<LinkProps> = ({
   return (
     <ReactRouterLink
       to={to}
-      className={classnames(styles.Link, {
+      className={clsx(styles.Link, {
         [styles.LinkRed]: colorVariant === "red",
         [styles.LinkWhite]: colorVariant === "white",
         [styles.underline]: isUnderLine,

@@ -48,7 +48,6 @@ export const Badge: FC<BadgeProps> = ({
   mainTypeBadgeVariant,
   additionalTypeBadgeVariant = "default",
   countryCode,
-  noncontextualBadgeVariants,
 }) => {
   return (
     <div

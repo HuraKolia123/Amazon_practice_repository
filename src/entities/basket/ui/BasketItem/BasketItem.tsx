@@ -19,7 +19,6 @@ export const BasketItem: FC<BasketItemProps> = ({
   product_price,
   product_title,
   product_photo,
-  asin,
 }) => {
   return (
     <div className={styles.BasketItem}>

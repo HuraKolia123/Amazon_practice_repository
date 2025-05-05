@@ -1,4 +1,4 @@
-import { FC, useRef, useState } from "react";
+import { FC, useRef } from "react";
 // styles
 import styles from "./InputRange.module.scss";
 

@@ -1,5 +1,5 @@
 // react
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect } from "react";
 //shared
 import { Button } from "@/shared/ui/Button";
 //assets

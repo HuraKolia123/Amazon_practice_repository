@@ -1,9 +1,10 @@
 // react
 import { FC, useState } from "react";
-// styles
-import styles from "./HeaderCleverSearchInput.module.scss";
+//ui
 import { HeaderInput } from "../HeaderInput/HeaderInput";
 import { HeaderSelect } from "@/widgets/headerCleverSearch/ui/HeaderSelect/HeaderSelect";
+// styles
+import styles from "./HeaderCleverSearchInput.module.scss";
 
 interface HeaderCleverSearchInputProps {}
 
@@ -14,10 +15,12 @@ export const HeaderCleverSearchInput: FC<
   return (
     <div className={styles.HeaderCleverSearchInput}>
       <HeaderSelect
+        //@ts-ignore
         selectedOption={selectedOption}
+        //@ts-ignore
         setSelectedOption={setSelectedOption}
       />
-      <HeaderInput />
+      <HeaderInput onChange={() => {}} value="" />
     </div>
   );
 };
