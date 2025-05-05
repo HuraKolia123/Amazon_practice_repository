@@ -14,9 +14,9 @@ import { useGetCategoryItemsQuery } from "@/entities/utility/productCategoryList
 import { getProductsRoute } from "@/shared/libs/constants/routes";
 import { buildUrlWithSearchParams } from "@/shared/libs/utils/buildUrlWithSearchParams";
 //ui
+import { DropDown } from "@/shared/ui/DropDown";
 import { CleverSearchContent } from "../CleverSearchContent";
-import { DropDown } from "@/shared/ui/DropDown/DropDown";
-import { Input } from "@/shared/ui/Input/Input";
+import { Input } from "@/shared/ui/Input";
 //assets
 import SearchIcon from "@/shared/libs/assets/svg/searchIcon.svg?react";
 // styles

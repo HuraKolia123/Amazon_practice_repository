@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 //types
 import { FormField } from "@/shared/libs/types/formField";
 //ui
-import { Input } from "@/shared/ui/Input/Input";
+import { Input } from "@/shared/ui/Input";
 import { Button } from "@/shared/ui/Button";
 //styles
 import styles from "./Form.module.scss";
