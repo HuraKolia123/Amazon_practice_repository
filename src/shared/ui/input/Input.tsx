@@ -7,7 +7,7 @@ import {
   ReactNode,
   useState,
 } from "react";
-//libraries
+//libs
 import { useFormContext } from "react-hook-form";
 import clsx from "clsx";
 //ui

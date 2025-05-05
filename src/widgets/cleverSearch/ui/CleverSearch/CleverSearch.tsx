@@ -15,8 +15,8 @@ import { getProductsRoute } from "@/shared/libs/constants/routes";
 import { buildUrlWithSearchParams } from "@/shared/libs/utils/buildUrlWithSearchParams";
 //ui
 import { CleverSearchContent } from "../CleverSearchContent";
-import { DropDown } from "@/shared/ui/DropDown";
-import { Input } from "@/shared/ui/Input";
+import { DropDown } from "@/shared/ui/DropDown/DropDown";
+import { Input } from "@/shared/ui/Input/Input";
 //assets
 import SearchIcon from "@/shared/libs/assets/svg/searchIcon.svg?react";
 // styles
