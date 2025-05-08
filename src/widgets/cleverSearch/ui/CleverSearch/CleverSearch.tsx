@@ -4,7 +4,7 @@ import React, { ChangeEvent, FC, useState } from "react";
 import { useSelector } from "react-redux";
 import { CleverSearchSelectCategory } from "../CleverSearchSelectCategory/CleverSearchSelectCategory";
 //debouncoing
-import { useDebounce } from "../../../../shared/libs/hooks/useDebounce";
+import { useDebounce } from "@/shared/libs/hooks/useDebounce";
 //react-router
 import { useNavigate, useSearchParams } from "react-router";
 //query

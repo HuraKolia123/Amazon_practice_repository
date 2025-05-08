@@ -2,7 +2,7 @@
 import { ChangeEvent, Dispatch, FC, useState } from "react";
 // styles
 import { ITag } from "../../model/types/types";
-import { Input } from "../../../../shared/ui/Input/Input";
+import { Input } from "@/shared/ui/Input";
 
 interface TagAddInputProps {
   setTags: Dispatch<React.SetStateAction<ITag[]>>;
